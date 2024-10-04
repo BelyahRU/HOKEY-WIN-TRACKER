@@ -10,9 +10,11 @@
 		1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */; };
 		1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */; };
 		1ACA935C2CB0A97D00F4B103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA935B2CB0A97D00F4B103 /* ViewController.swift */; };
-		1ACA935F2CB0A97D00F4B103 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA935E2CB0A97D00F4B103 /* Base */; };
 		1ACA93612CB0A97F00F4B103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA93602CB0A97F00F4B103 /* Assets.xcassets */; };
 		1ACA93642CB0A97F00F4B103 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA93632CB0A97F00F4B103 /* Base */; };
+		1ACA93722CB0AAA600F4B103 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93712CB0AAA600F4B103 /* Coordinator.swift */; };
+		1ACA93742CB0AAF900F4B103 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93732CB0AAF900F4B103 /* MainCoordinator.swift */; };
+		1ACA93762CB0AB6800F4B103 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93752CB0AB6800F4B103 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +22,12 @@
 		1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1ACA935B2CB0A97D00F4B103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1ACA935E2CB0A97D00F4B103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1ACA93602CB0A97F00F4B103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ACA93632CB0A97F00F4B103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ACA93652CB0A97F00F4B103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ACA93712CB0AAA600F4B103 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1ACA93732CB0AAF900F4B103 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		1ACA93752CB0AB6800F4B103 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,65 @@
 		1ACA93562CB0A97D00F4B103 /* HOKEY WIN TRACKER */ = {
 			isa = PBXGroup;
 			children = (
+				1ACA936E2CB0A99F00F4B103 /* Coordinator */,
+				1ACA936D2CB0A99A00F4B103 /* Model */,
+				1ACA936C2CB0A99500F4B103 /* View */,
+				1ACA936B2CB0A98E00F4B103 /* ViewModel */,
+			);
+			path = "HOKEY WIN TRACKER";
+			sourceTree = "<group>";
+		};
+		1ACA936B2CB0A98E00F4B103 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1ACA936C2CB0A99500F4B103 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA935B2CB0A97D00F4B103 /* ViewController.swift */,
+				1ACA93752CB0AB6800F4B103 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ACA936D2CB0A99A00F4B103 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA93702CB0A9B600F4B103 /* Support */,
+				1ACA936F2CB0A9A600F4B103 /* Resources */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1ACA936E2CB0A99F00F4B103 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA93712CB0AAA600F4B103 /* Coordinator.swift */,
+				1ACA93732CB0AAF900F4B103 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1ACA936F2CB0A9A600F4B103 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA93602CB0A97F00F4B103 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1ACA93702CB0A9B600F4B103 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */,
 				1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */,
-				1ACA935B2CB0A97D00F4B103 /* ViewController.swift */,
-				1ACA935D2CB0A97D00F4B103 /* Main.storyboard */,
-				1ACA93602CB0A97F00F4B103 /* Assets.xcassets */,
 				1ACA93622CB0A97F00F4B103 /* LaunchScreen.storyboard */,
 				1ACA93652CB0A97F00F4B103 /* Info.plist */,
 			);
-			path = "HOKEY WIN TRACKER";
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +181,6 @@
 			files = (
 				1ACA93612CB0A97F00F4B103 /* Assets.xcassets in Resources */,
 				1ACA93642CB0A97F00F4B103 /* Base in Resources */,
-				1ACA935F2CB0A97D00F4B103 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ACA93722CB0AAA600F4B103 /* Coordinator.swift in Sources */,
 				1ACA935C2CB0A97D00F4B103 /* ViewController.swift in Sources */,
 				1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */,
+				1ACA93762CB0AB6800F4B103 /* MainViewController.swift in Sources */,
+				1ACA93742CB0AAF900F4B103 /* MainCoordinator.swift in Sources */,
 				1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +203,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1ACA935D2CB0A97D00F4B103 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1ACA935E2CB0A97D00F4B103 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1ACA93622CB0A97F00F4B103 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,10 +341,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HOKEY WIN TRACKER/Info.plist";
+				INFOPLIST_FILE = "HOKEY WIN TRACKER/Model/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,10 +367,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HOKEY WIN TRACKER/Info.plist";
+				INFOPLIST_FILE = "HOKEY WIN TRACKER/Model/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
