@@ -16,6 +16,10 @@ enum Resources {
     
     enum Images {
         static let khlLogo = "khlLogo"
+        static let leaderCell = "leaderCell"
+        static let outsiderCell = "outsiderCell"
+        static let greenHockeyPuck = "greenHockeyPuck"
+        static let redHockeyPuck = "redHockeyPuck"
     }
     
     enum Buttons {
@@ -29,6 +33,9 @@ enum Resources {
         static let orangeColor = UIColor(red: 255/255, green: 99/255, blue: 71/255, alpha: 1.0)
         static let lightBlueColor = UIColor(red: 0xB1 / 255.0, green: 0xE7 / 255.0, blue: 0xFF / 255.0, alpha: 1.0)
         static let cellsColor = UIColor(red: 0x01 / 255.0, green: 0x26 / 255.0, blue: 0x37 / 255.0, alpha: 1.0)
+        static let grayColor = UIColor(red: 193/255, green: 193/255, blue: 193/255, alpha: 1.0)
 
+        static let leadersTextColor = UIColor(red: 50/255, green: 205/255, blue: 50/255, alpha: 1.0)
+        static let outsidersTextColor = UIColor(red: 255/255, green: 99/255, blue: 71/255, alpha: 1.0)
     }
 }

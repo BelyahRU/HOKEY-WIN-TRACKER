@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
 
-class StatisticsView: UIView {
+class TableView: UIView {
     
-    private let playersStatisticsLabel: UILabel = {
+    private let tournamentTableLabel: UILabel = {
         let label = UILabel()
-        label.text = "PLAYERS STATISTICS"
+        label.text = "TOURNAMENT TABLE"
         label.textColor = .white
         label.textAlignment = .left
         label.backgroundColor = .clear
@@ -13,24 +13,13 @@ class StatisticsView: UIView {
         return label
     }()
     
-    private let top10PlayersLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Top 10 players"
-        label.textColor = .white
-        label.textAlignment = .left
-        label.backgroundColor = .clear
-        label.font = UIFont.systemFont(ofSize: 24)
-        return label
-    }()
-    
-    public let top10PlayersCollectionView: UICollectionView = {
+    let teamsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 28, height: 146)
         layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 13, right: 0)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 28, height: 68)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
         return collectionView
     }()
 
@@ -49,27 +38,22 @@ class StatisticsView: UIView {
     }
 
     private func setupSubviews() {
-        addSubview(playersStatisticsLabel)
-        addSubview(top10PlayersLabel)
-        addSubview(top10PlayersCollectionView)
+        addSubview(tournamentTableLabel)
+        addSubview(teamsCollectionView)
     }
 
     private func setupConstraints() {
-        playersStatisticsLabel.snp.makeConstraints { make in
+        tournamentTableLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(14)
             make.top.equalToSuperview().offset(67)
         }
         
-        top10PlayersLabel.snp.makeConstraints { make in
+        teamsCollectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(14)
-            make.top.equalTo(playersStatisticsLabel.snp.bottom).offset(20)
-        }
-        
-        top10PlayersCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(top10PlayersLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(14)
+            make.top.equalTo(tournamentTableLabel.snp.bottom).offset(20)
             make.trailing.equalToSuperview().offset(-14)
             make.bottom.equalToSuperview()
         }
+        
     }
 }

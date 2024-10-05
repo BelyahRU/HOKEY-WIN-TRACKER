@@ -34,6 +34,12 @@
 		1ACA93AB2CB178A700F4B103 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93AA2CB178A700F4B103 /* StatisticsView.swift */; };
 		1ACA93AE2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93AD2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift */; };
 		1ACA93B02CB17AA800F4B103 /* StatisticsVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93AF2CB17AA800F4B103 /* StatisticsVC + CollectionView.swift */; };
+		1ACA93B42CB1875300F4B103 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93B32CB1875300F4B103 /* TableView.swift */; };
+		1ACA93B62CB1A48600F4B103 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93B52CB1A48600F4B103 /* SectionHeaderView.swift */; };
+		1ACA93B82CB1A4A300F4B103 /* TableVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93B72CB1A4A200F4B103 /* TableVC + CollectionView.swift */; };
+		1ACA93BA2CB1A65E00F4B103 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93B92CB1A65E00F4B103 /* TeamCell.swift */; };
+		1ACA93BC2CB1B2E000F4B103 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */; };
+		1ACA93BE2CB1B33B00F4B103 /* HomeVC + Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93BD2CB1B33B00F4B103 /* HomeVC + Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +71,12 @@
 		1ACA93AA2CB178A700F4B103 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		1ACA93AD2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1ACA93AF2CB17AA800F4B103 /* StatisticsVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatisticsVC + CollectionView.swift"; sourceTree = "<group>"; };
+		1ACA93B32CB1875300F4B103 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		1ACA93B52CB1A48600F4B103 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		1ACA93B72CB1A4A200F4B103 /* TableVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableVC + CollectionView.swift"; sourceTree = "<group>"; };
+		1ACA93B92CB1A65E00F4B103 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		1ACA93BD2CB1B33B00F4B103 /* HomeVC + Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + Action.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +128,11 @@
 		1ACA936C2CB0A99500F4B103 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1ACA93B22CB1874400F4B103 /* TableViewController */,
 				1ACA93A92CB175EF00F4B103 /* StatisticsViewController */,
 				1ACA93A02CB16F5900F4B103 /* NewsViewController */,
 				1ACA93952CB0BC9500F4B103 /* HomeViewController */,
 				1ACA93782CB0AD4A00F4B103 /* MainTabBarController */,
-				1ACA93812CB0AF4300F4B103 /* TableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +194,7 @@
 				1ACA93962CB0BC9F00F4B103 /* Views */,
 				1ACA937B2CB0AF1800F4B103 /* HomeViewController.swift */,
 				1ACA93992CB0C1F800F4B103 /* HomeVC + CollectionViews.swift */,
+				1ACA93BD2CB1B33B00F4B103 /* HomeVC + Action.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -190,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				1ACA93972CB0BCA700F4B103 /* HomeView.swift */,
+				1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,6 +261,18 @@
 				1ACA93AA2CB178A700F4B103 /* StatisticsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1ACA93B22CB1874400F4B103 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA93812CB0AF4300F4B103 /* TableViewController.swift */,
+				1ACA93B32CB1875300F4B103 /* TableView.swift */,
+				1ACA93B52CB1A48600F4B103 /* SectionHeaderView.swift */,
+				1ACA93B72CB1A4A200F4B103 /* TableVC + CollectionView.swift */,
+				1ACA93B92CB1A65E00F4B103 /* TeamCell.swift */,
+			);
+			path = TableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,9 +355,12 @@
 				1ACA93A82CB171CC00F4B103 /* NewsCollectionViewCell.swift in Sources */,
 				1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */,
 				1ACA937A2CB0AD7300F4B103 /* MainTabBarController.swift in Sources */,
+				1ACA93B82CB1A4A300F4B103 /* TableVC + CollectionView.swift in Sources */,
 				1ACA93B02CB17AA800F4B103 /* StatisticsVC + CollectionView.swift in Sources */,
 				1ACA93AE2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift in Sources */,
+				1ACA93B42CB1875300F4B103 /* TableView.swift in Sources */,
 				1ACA939F2CB0C30F00F4B103 /* CompletedCollectionViewCell.swift in Sources */,
+				1ACA93BC2CB1B2E000F4B103 /* FilterView.swift in Sources */,
 				1ACA93802CB0AF3500F4B103 /* StatisticsViewController.swift in Sources */,
 				1ACA93982CB0BCA700F4B103 /* HomeView.swift in Sources */,
 				1ACA93912CB0B65400F4B103 /* Resources.swift in Sources */,
@@ -339,13 +368,16 @@
 				1ACA93A42CB1712900F4B103 /* NewsVC + CollectionView.swift in Sources */,
 				1ACA93A22CB16F7800F4B103 /* NewsView.swift in Sources */,
 				1ACA939D2CB0C2D400F4B103 /* UpcomingCollectionViewCell.swift in Sources */,
+				1ACA93B62CB1A48600F4B103 /* SectionHeaderView.swift in Sources */,
 				1ACA93892CB0B0E000F4B103 /* NewsCoordinator.swift in Sources */,
 				1ACA93742CB0AAF900F4B103 /* MainTabBarCoordinator.swift in Sources */,
 				1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */,
+				1ACA93BE2CB1B33B00F4B103 /* HomeVC + Action.swift in Sources */,
 				1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */,
 				1ACA939A2CB0C1F800F4B103 /* HomeVC + CollectionViews.swift in Sources */,
 				1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */,
 				1ACA937C2CB0AF1800F4B103 /* HomeViewController.swift in Sources */,
+				1ACA93BA2CB1A65E00F4B103 /* TeamCell.swift in Sources */,
 				1ACA93AB2CB178A700F4B103 /* StatisticsView.swift in Sources */,
 				1ACA93872CB0B0D700F4B103 /* HomeCoordinator.swift in Sources */,
 				1ACA938D2CB0B10500F4B103 /* TableCoordinator.swift in Sources */,

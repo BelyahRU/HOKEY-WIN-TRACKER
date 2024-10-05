@@ -125,7 +125,7 @@ class HomeView: UIView {
         
         upcomingMatchesLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(14)
-            make.top.equalTo(khlLogoImageView.snp.bottom).offset(24)
+            make.top.equalTo(khlLogoImageView.snp.bottom).offset(20)
         }
         
         upcomingCollectionView.snp.makeConstraints { make in

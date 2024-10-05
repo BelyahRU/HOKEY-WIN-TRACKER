@@ -7,6 +7,7 @@ class HomeViewController: UIViewController {
     var homeView = HomeView()
     
     var cellHeights: [Bool] = Array(repeating: false, count: 20)
+    let filterView = FilterView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,6 @@ class HomeViewController: UIViewController {
         guard let cell = notification.userInfo?["cell"] as? CompletedCollectionViewCell,
               let indexPath = homeView.completedCollectionView.indexPath(for: cell) else { return }
         
-        // Изменяем состояние для конкретной ячейки
         cellHeights[indexPath.row] = cell.isExpanded
         homeView.completedCollectionView.performBatchUpdates(nil)
     }
@@ -27,13 +27,23 @@ class HomeViewController: UIViewController {
         setupUI()
         setupUpcomingCollectionView()
         setupCompletedCollectionView()
+        setupButtons()
     }
     
     private func setupUI() {
+        filterView.isHidden = true
         view.addSubview(homeView)
+        homeView.addSubview(filterView)
         
         homeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        filterView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(300)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.snp.bottom)
         }
     }
 
