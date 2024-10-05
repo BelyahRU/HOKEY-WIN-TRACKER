@@ -3,13 +3,22 @@ import SnapKit
 
 class FilterView: UIView {
 
-    // MARK: - UI Elements
     public let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Filter Options"
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
+    }()
+    
+    public let closeButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(systemName: "xmark.circle.fill")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        return button
     }()
     
     public let datePicker: UIDatePicker = {
@@ -23,19 +32,28 @@ class FilterView: UIView {
         let textField = UITextField()
         textField.placeholder = "Enter team name"
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = Resources.Colors.cellsColor
         return textField
     }()
     
     public let applyButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Apply", for: .normal)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = .systemBlue
         button.tintColor = .white
         button.layer.cornerRadius = 10
         return button
     }()
     
-    // MARK: - Initialization
+    public let instructionsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Enter a date or/and a team name to filter results."
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        return label
+      }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -46,22 +64,22 @@ class FilterView: UIView {
     }
     
     private func configure() {
-        backgroundColor = .white
+        backgroundColor = Resources.Colors.blueColor
         layer.cornerRadius = 20
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 0, height: -5)
-
         setupSubviews()
         setupConstraints()
     }
-
-    // MARK: - Setup View
+    
     private func setupSubviews() {
         addSubview(titleLabel)
+        addSubview(closeButton)
         addSubview(datePicker)
         addSubview(teamTextField)
         addSubview(applyButton)
+        addSubview(instructionsLabel)
     }
 
     private func setupConstraints() {
@@ -70,9 +88,21 @@ class FilterView: UIView {
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
         }
+        
+        closeButton.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+            make.centerY.equalTo(titleLabel)
+            make.trailing.equalToSuperview().offset(-20)
+        }
+        
+        instructionsLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
 
         datePicker.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.top.equalTo(instructionsLabel.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(150)

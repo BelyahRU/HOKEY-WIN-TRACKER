@@ -40,6 +40,7 @@
 		1ACA93BA2CB1A65E00F4B103 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93B92CB1A65E00F4B103 /* TeamCell.swift */; };
 		1ACA93BC2CB1B2E000F4B103 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */; };
 		1ACA93BE2CB1B33B00F4B103 /* HomeVC + Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93BD2CB1B33B00F4B103 /* HomeVC + Action.swift */; };
+		1ACA93C12CB1E9A100F4B103 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C02CB1E9A100F4B103 /* MatchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		1ACA93B92CB1A65E00F4B103 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		1ACA93BD2CB1B33B00F4B103 /* HomeVC + Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + Action.swift"; sourceTree = "<group>"; };
+		1ACA93C02CB1E9A100F4B103 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				1ACA93A02CB16F5900F4B103 /* NewsViewController */,
 				1ACA93952CB0BC9500F4B103 /* HomeViewController */,
 				1ACA93782CB0AD4A00F4B103 /* MainTabBarController */,
+				1ACA93C02CB1E9A100F4B103 /* MatchViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				1ACA93742CB0AAF900F4B103 /* MainTabBarCoordinator.swift in Sources */,
 				1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */,
 				1ACA93BE2CB1B33B00F4B103 /* HomeVC + Action.swift in Sources */,
+				1ACA93C12CB1E9A100F4B103 /* MatchViewController.swift in Sources */,
 				1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */,
 				1ACA939A2CB0C1F800F4B103 /* HomeVC + CollectionViews.swift in Sources */,
 				1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */,
