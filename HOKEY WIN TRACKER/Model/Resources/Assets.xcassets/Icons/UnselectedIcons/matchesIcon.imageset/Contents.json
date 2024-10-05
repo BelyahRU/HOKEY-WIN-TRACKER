@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "hockey_puck_icon_137499 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "hockey_puck_icon_137499 1-2.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "hockey_puck_icon_137499 1-3.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -4,7 +4,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: MainCoordinator?
+    var coordinator: MainTabBarCoordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func start() {
-        coordinator = MainCoordinator()
+        coordinator = MainTabBarCoordinator()
         coordinator?.start()
         window?.rootViewController = coordinator?.navigationController
         window?.makeKeyAndVisible()

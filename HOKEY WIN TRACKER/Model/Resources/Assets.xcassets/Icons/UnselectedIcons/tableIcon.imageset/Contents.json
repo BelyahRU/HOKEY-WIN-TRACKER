@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "win_reward_cup_success_achievement_prize_winner_award_trophy_icon_210768 (1) 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "win_reward_cup_success_achievement_prize_winner_award_trophy_icon_210768 (1) 1-2.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "win_reward_cup_success_achievement_prize_winner_award_trophy_icon_210768 (1) 1-3.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

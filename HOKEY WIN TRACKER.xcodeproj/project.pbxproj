@@ -9,25 +9,46 @@
 /* Begin PBXBuildFile section */
 		1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */; };
 		1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */; };
-		1ACA935C2CB0A97D00F4B103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA935B2CB0A97D00F4B103 /* ViewController.swift */; };
 		1ACA93612CB0A97F00F4B103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA93602CB0A97F00F4B103 /* Assets.xcassets */; };
 		1ACA93642CB0A97F00F4B103 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA93632CB0A97F00F4B103 /* Base */; };
 		1ACA93722CB0AAA600F4B103 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93712CB0AAA600F4B103 /* Coordinator.swift */; };
-		1ACA93742CB0AAF900F4B103 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93732CB0AAF900F4B103 /* MainCoordinator.swift */; };
-		1ACA93762CB0AB6800F4B103 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93752CB0AB6800F4B103 /* MainViewController.swift */; };
+		1ACA93742CB0AAF900F4B103 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93732CB0AAF900F4B103 /* MainTabBarCoordinator.swift */; };
+		1ACA937A2CB0AD7300F4B103 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93792CB0AD7300F4B103 /* MainTabBarController.swift */; };
+		1ACA937C2CB0AF1800F4B103 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA937B2CB0AF1800F4B103 /* HomeViewController.swift */; };
+		1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA937D2CB0AF2600F4B103 /* NewsViewController.swift */; };
+		1ACA93802CB0AF3500F4B103 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */; };
+		1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93812CB0AF4300F4B103 /* TableViewController.swift */; };
+		1ACA93842CB0AF5000F4B103 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93832CB0AF5000F4B103 /* MatchesViewController.swift */; };
+		1ACA93872CB0B0D700F4B103 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93862CB0B0D700F4B103 /* HomeCoordinator.swift */; };
+		1ACA93892CB0B0E000F4B103 /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93882CB0B0E000F4B103 /* NewsCoordinator.swift */; };
+		1ACA938B2CB0B0F100F4B103 /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA938A2CB0B0F100F4B103 /* StatisticsCoordinator.swift */; };
+		1ACA938D2CB0B10500F4B103 /* TableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA938C2CB0B10500F4B103 /* TableCoordinator.swift */; };
+		1ACA938F2CB0B11300F4B103 /* MatchesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA938E2CB0B11300F4B103 /* MatchesCoordinator.swift */; };
+		1ACA93912CB0B65400F4B103 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93902CB0B65400F4B103 /* Resources.swift */; };
+		1ACA93942CB0B93E00F4B103 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1ACA93932CB0B93E00F4B103 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1ACA93542CB0A97D00F4B103 /* HOKEY WIN TRACKER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HOKEY WIN TRACKER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1ACA935B2CB0A97D00F4B103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1ACA93602CB0A97F00F4B103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ACA93632CB0A97F00F4B103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ACA93652CB0A97F00F4B103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ACA93712CB0AAA600F4B103 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		1ACA93732CB0AAF900F4B103 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		1ACA93752CB0AB6800F4B103 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1ACA93732CB0AAF900F4B103 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		1ACA93792CB0AD7300F4B103 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1ACA937B2CB0AF1800F4B103 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1ACA937D2CB0AF2600F4B103 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		1ACA93812CB0AF4300F4B103 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		1ACA93832CB0AF5000F4B103 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		1ACA93862CB0B0D700F4B103 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		1ACA93882CB0B0E000F4B103 /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
+		1ACA938A2CB0B0F100F4B103 /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
+		1ACA938C2CB0B10500F4B103 /* TableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCoordinator.swift; sourceTree = "<group>"; };
+		1ACA938E2CB0B11300F4B103 /* MatchesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCoordinator.swift; sourceTree = "<group>"; };
+		1ACA93902CB0B65400F4B103 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ACA93942CB0B93E00F4B103 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +100,12 @@
 		1ACA936C2CB0A99500F4B103 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1ACA935B2CB0A97D00F4B103 /* ViewController.swift */,
-				1ACA93752CB0AB6800F4B103 /* MainViewController.swift */,
+				1ACA93782CB0AD4A00F4B103 /* MainTabBarController */,
+				1ACA937B2CB0AF1800F4B103 /* HomeViewController.swift */,
+				1ACA937D2CB0AF2600F4B103 /* NewsViewController.swift */,
+				1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */,
+				1ACA93812CB0AF4300F4B103 /* TableViewController.swift */,
+				1ACA93832CB0AF5000F4B103 /* MatchesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,7 +123,12 @@
 			isa = PBXGroup;
 			children = (
 				1ACA93712CB0AAA600F4B103 /* Coordinator.swift */,
-				1ACA93732CB0AAF900F4B103 /* MainCoordinator.swift */,
+				1ACA93732CB0AAF900F4B103 /* MainTabBarCoordinator.swift */,
+				1ACA93862CB0B0D700F4B103 /* HomeCoordinator.swift */,
+				1ACA93882CB0B0E000F4B103 /* NewsCoordinator.swift */,
+				1ACA938A2CB0B0F100F4B103 /* StatisticsCoordinator.swift */,
+				1ACA938C2CB0B10500F4B103 /* TableCoordinator.swift */,
+				1ACA938E2CB0B11300F4B103 /* MatchesCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -106,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				1ACA93602CB0A97F00F4B103 /* Assets.xcassets */,
+				1ACA93902CB0B65400F4B103 /* Resources.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -119,6 +151,14 @@
 				1ACA93652CB0A97F00F4B103 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		1ACA93782CB0AD4A00F4B103 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA93792CB0AD7300F4B103 /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +177,9 @@
 			dependencies = (
 			);
 			name = "HOKEY WIN TRACKER";
+			packageProductDependencies = (
+				1ACA93932CB0B93E00F4B103 /* SnapKit */,
+			);
 			productName = "HOKEY WIN TRACKER";
 			productReference = 1ACA93542CB0A97D00F4B103 /* HOKEY WIN TRACKER.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +208,9 @@
 				Base,
 			);
 			mainGroup = 1ACA934B2CB0A97D00F4B103;
+			packageReferences = (
+				1ACA93922CB0B93E00F4B103 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1ACA93552CB0A97D00F4B103 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,11 +238,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ACA93722CB0AAA600F4B103 /* Coordinator.swift in Sources */,
-				1ACA935C2CB0A97D00F4B103 /* ViewController.swift in Sources */,
 				1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */,
-				1ACA93762CB0AB6800F4B103 /* MainViewController.swift in Sources */,
-				1ACA93742CB0AAF900F4B103 /* MainCoordinator.swift in Sources */,
+				1ACA93842CB0AF5000F4B103 /* MatchesViewController.swift in Sources */,
+				1ACA937A2CB0AD7300F4B103 /* MainTabBarController.swift in Sources */,
+				1ACA93802CB0AF3500F4B103 /* StatisticsViewController.swift in Sources */,
+				1ACA93912CB0B65400F4B103 /* Resources.swift in Sources */,
+				1ACA938B2CB0B0F100F4B103 /* StatisticsCoordinator.swift in Sources */,
+				1ACA93892CB0B0E000F4B103 /* NewsCoordinator.swift in Sources */,
+				1ACA93742CB0AAF900F4B103 /* MainTabBarCoordinator.swift in Sources */,
+				1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */,
 				1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */,
+				1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */,
+				1ACA937C2CB0AF1800F4B103 /* HomeViewController.swift in Sources */,
+				1ACA938F2CB0B11300F4B103 /* MatchesCoordinator.swift in Sources */,
+				1ACA93872CB0B0D700F4B103 /* HomeCoordinator.swift in Sources */,
+				1ACA938D2CB0B10500F4B103 /* TableCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +463,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1ACA93922CB0B93E00F4B103 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1ACA93932CB0B93E00F4B103 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1ACA93922CB0B93E00F4B103 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1ACA934C2CB0A97D00F4B103 /* Project object */;
 }
