@@ -31,6 +31,9 @@
 		1ACA93A22CB16F7800F4B103 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93A12CB16F7800F4B103 /* NewsView.swift */; };
 		1ACA93A42CB1712900F4B103 /* NewsVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93A32CB1712900F4B103 /* NewsVC + CollectionView.swift */; };
 		1ACA93A82CB171CC00F4B103 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93A72CB171CC00F4B103 /* NewsCollectionViewCell.swift */; };
+		1ACA93AB2CB178A700F4B103 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93AA2CB178A700F4B103 /* StatisticsView.swift */; };
+		1ACA93AE2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93AD2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift */; };
+		1ACA93B02CB17AA800F4B103 /* StatisticsVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93AF2CB17AA800F4B103 /* StatisticsVC + CollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		1ACA93A12CB16F7800F4B103 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		1ACA93A32CB1712900F4B103 /* NewsVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsVC + CollectionView.swift"; sourceTree = "<group>"; };
 		1ACA93A72CB171CC00F4B103 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1ACA93AA2CB178A700F4B103 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		1ACA93AD2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1ACA93AF2CB17AA800F4B103 /* StatisticsVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatisticsVC + CollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +116,10 @@
 		1ACA936C2CB0A99500F4B103 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1ACA93A92CB175EF00F4B103 /* StatisticsViewController */,
 				1ACA93A02CB16F5900F4B103 /* NewsViewController */,
 				1ACA93952CB0BC9500F4B103 /* HomeViewController */,
 				1ACA93782CB0AD4A00F4B103 /* MainTabBarController */,
-				1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */,
 				1ACA93812CB0AF4300F4B103 /* TableViewController.swift */,
 			);
 			path = View;
@@ -224,6 +230,25 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1ACA93A92CB175EF00F4B103 /* StatisticsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA93B12CB17AAC00F4B103 /* View */,
+				1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */,
+				1ACA93AF2CB17AA800F4B103 /* StatisticsVC + CollectionView.swift */,
+			);
+			path = StatisticsViewController;
+			sourceTree = "<group>";
+		};
+		1ACA93B12CB17AAC00F4B103 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ACA93AD2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift */,
+				1ACA93AA2CB178A700F4B103 /* StatisticsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +329,8 @@
 				1ACA93A82CB171CC00F4B103 /* NewsCollectionViewCell.swift in Sources */,
 				1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */,
 				1ACA937A2CB0AD7300F4B103 /* MainTabBarController.swift in Sources */,
+				1ACA93B02CB17AA800F4B103 /* StatisticsVC + CollectionView.swift in Sources */,
+				1ACA93AE2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift in Sources */,
 				1ACA939F2CB0C30F00F4B103 /* CompletedCollectionViewCell.swift in Sources */,
 				1ACA93802CB0AF3500F4B103 /* StatisticsViewController.swift in Sources */,
 				1ACA93982CB0BCA700F4B103 /* HomeView.swift in Sources */,
@@ -319,6 +346,7 @@
 				1ACA939A2CB0C1F800F4B103 /* HomeVC + CollectionViews.swift in Sources */,
 				1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */,
 				1ACA937C2CB0AF1800F4B103 /* HomeViewController.swift in Sources */,
+				1ACA93AB2CB178A700F4B103 /* StatisticsView.swift in Sources */,
 				1ACA93872CB0B0D700F4B103 /* HomeCoordinator.swift in Sources */,
 				1ACA938D2CB0B10500F4B103 /* TableCoordinator.swift in Sources */,
 			);

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "trophy_winner_first_award_cup_champion_icon_141870 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "trophy_winner_first_award_cup_champion_icon_141870 1-2.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "trophy_winner_first_award_cup_champion_icon_141870 1-3.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

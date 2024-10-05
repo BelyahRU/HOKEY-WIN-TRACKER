@@ -9,6 +9,9 @@ enum Resources {
         static let newsIcon = "newsIcon"
         static let statisticsIcon = "statisticsIcon"
         static let tableIcon = "tableIcon"
+        static let goalsIcon = "goalsIcon"
+        static let totalPointsIcon = "totalPointsIcon"
+        static let assistIcon = "assistIcon"
     }
     
     enum Images {
