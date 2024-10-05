@@ -5,16 +5,28 @@ class HomeViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
     var homeView = HomeView()
+    
+    var cellHeights: [Bool] = Array(repeating: false, count: 20)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        view.backgroundColor = .orange
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCellExpansion(_:)), name: NSNotification.Name("cellExpansionChanged"), object: nil)
+    }
+    
+    @objc private func handleCellExpansion(_ notification: Notification) {
+        guard let cell = notification.userInfo?["cell"] as? CompletedCollectionViewCell,
+              let indexPath = homeView.completedCollectionView.indexPath(for: cell) else { return }
+        
+        // Изменяем состояние для конкретной ячейки
+        cellHeights[indexPath.row] = cell.isExpanded
+        homeView.completedCollectionView.performBatchUpdates(nil)
     }
     
     private func configure() {
         setupUI()
         setupUpcomingCollectionView()
+        setupCompletedCollectionView()
     }
     
     private func setupUI() {

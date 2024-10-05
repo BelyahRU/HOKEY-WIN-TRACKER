@@ -9,7 +9,7 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
     private let backgroundRoundedView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
-        view.backgroundColor = Resources.Colors.blueColor
+        view.backgroundColor = Resources.Colors.cellsColor
         return view
     }()
     
@@ -53,6 +53,17 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    let stadiumLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Stadium: 'Татнефть Арена'"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
+    }()
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,7 +75,6 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
     }
     
     private func configure() {
-        setupUI()
         setupSubviews()
         setupConstraints()
     }
@@ -73,9 +83,6 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
     }
     
-    private func setupUI() {
-        
-    }
     
     private func setupSubviews() {
         addSubview(backgroundRoundedView)
@@ -84,6 +91,7 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         addSubview(timeBackOrangeView)
         addSubview(timeLabel)
         addSubview(dateLabel)
+        addSubview(stadiumLabel)
     }
     
     private func setupConstraints() {
@@ -121,6 +129,12 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         dateLabel.snp.makeConstraints { make in
             make.centerY.equalTo(timeLabel.snp.centerY)
             make.trailing.equalTo(timeLabel.snp.leading).offset(-10)
+        }
+        
+        stadiumLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(46)
+            make.leading.equalTo(secondTeamImageView.snp.trailing).offset(20)
+            make.width.equalTo(155)
         }
     }
 }

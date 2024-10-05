@@ -18,12 +18,10 @@
 		1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA937D2CB0AF2600F4B103 /* NewsViewController.swift */; };
 		1ACA93802CB0AF3500F4B103 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */; };
 		1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93812CB0AF4300F4B103 /* TableViewController.swift */; };
-		1ACA93842CB0AF5000F4B103 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93832CB0AF5000F4B103 /* MatchesViewController.swift */; };
 		1ACA93872CB0B0D700F4B103 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93862CB0B0D700F4B103 /* HomeCoordinator.swift */; };
 		1ACA93892CB0B0E000F4B103 /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93882CB0B0E000F4B103 /* NewsCoordinator.swift */; };
 		1ACA938B2CB0B0F100F4B103 /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA938A2CB0B0F100F4B103 /* StatisticsCoordinator.swift */; };
 		1ACA938D2CB0B10500F4B103 /* TableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA938C2CB0B10500F4B103 /* TableCoordinator.swift */; };
-		1ACA938F2CB0B11300F4B103 /* MatchesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA938E2CB0B11300F4B103 /* MatchesCoordinator.swift */; };
 		1ACA93912CB0B65400F4B103 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93902CB0B65400F4B103 /* Resources.swift */; };
 		1ACA93942CB0B93E00F4B103 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1ACA93932CB0B93E00F4B103 /* SnapKit */; };
 		1ACA93982CB0BCA700F4B103 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93972CB0BCA700F4B103 /* HomeView.swift */; };
@@ -46,12 +44,10 @@
 		1ACA937D2CB0AF2600F4B103 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		1ACA93812CB0AF4300F4B103 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		1ACA93832CB0AF5000F4B103 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		1ACA93862CB0B0D700F4B103 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		1ACA93882CB0B0E000F4B103 /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
 		1ACA938A2CB0B0F100F4B103 /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
 		1ACA938C2CB0B10500F4B103 /* TableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCoordinator.swift; sourceTree = "<group>"; };
-		1ACA938E2CB0B11300F4B103 /* MatchesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCoordinator.swift; sourceTree = "<group>"; };
 		1ACA93902CB0B65400F4B103 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		1ACA93972CB0BCA700F4B103 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1ACA93992CB0C1F800F4B103 /* HomeVC + CollectionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + CollectionViews.swift"; sourceTree = "<group>"; };
@@ -113,7 +109,6 @@
 				1ACA937D2CB0AF2600F4B103 /* NewsViewController.swift */,
 				1ACA937F2CB0AF3500F4B103 /* StatisticsViewController.swift */,
 				1ACA93812CB0AF4300F4B103 /* TableViewController.swift */,
-				1ACA93832CB0AF5000F4B103 /* MatchesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,7 +131,6 @@
 				1ACA93882CB0B0E000F4B103 /* NewsCoordinator.swift */,
 				1ACA938A2CB0B0F100F4B103 /* StatisticsCoordinator.swift */,
 				1ACA938C2CB0B10500F4B103 /* TableCoordinator.swift */,
-				1ACA938E2CB0B11300F4B103 /* MatchesCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -275,7 +269,6 @@
 			files = (
 				1ACA93722CB0AAA600F4B103 /* Coordinator.swift in Sources */,
 				1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */,
-				1ACA93842CB0AF5000F4B103 /* MatchesViewController.swift in Sources */,
 				1ACA937A2CB0AD7300F4B103 /* MainTabBarController.swift in Sources */,
 				1ACA939F2CB0C30F00F4B103 /* CompletedCollectionViewCell.swift in Sources */,
 				1ACA93802CB0AF3500F4B103 /* StatisticsViewController.swift in Sources */,
@@ -290,7 +283,6 @@
 				1ACA939A2CB0C1F800F4B103 /* HomeVC + CollectionViews.swift in Sources */,
 				1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */,
 				1ACA937C2CB0AF1800F4B103 /* HomeViewController.swift in Sources */,
-				1ACA938F2CB0B11300F4B103 /* MatchesCoordinator.swift in Sources */,
 				1ACA93872CB0B0D700F4B103 /* HomeCoordinator.swift in Sources */,
 				1ACA938D2CB0B10500F4B103 /* TableCoordinator.swift in Sources */,
 			);

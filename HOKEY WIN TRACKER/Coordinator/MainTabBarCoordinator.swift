@@ -11,7 +11,6 @@ class MainTabBarCoordinator: Coordinator {
     var newsCoordinator: NewsCoordinator!
     var statisticsCoordinator: StatisticsCoordinator!
     var tableCoordinator: TableCoordinator!
-    var matchesCoordinator: MatchesCoordinator!
     
     init() {
         self.navigationController = UINavigationController()
@@ -40,23 +39,17 @@ class MainTabBarCoordinator: Coordinator {
         childCoordinators.append(tableCoordinator)
         tableCoordinator.start()
         
-        matchesCoordinator = MatchesCoordinator(navigationController: UINavigationController())
-        matchesCoordinator.parentCoordinator = self
-        childCoordinators.append(matchesCoordinator)
-        matchesCoordinator.start()
         
         let homeImage = UIImage(named: Resources.Icons.homeIcon)
         let newsImage = UIImage(named: Resources.Icons.newsIcon)
         let statisticsImage = UIImage(named: Resources.Icons.statisticsIcon)
         let tableImage = UIImage(named: Resources.Icons.tableIcon)
-        let matchesImage = UIImage(named: Resources.Icons.matchesIcon)
 
         mainTabBarController.viewControllers = [
                 generateNavController(for: homeCoordinator.navigationController, title: "HOME", image: homeImage),
                 generateNavController(for: newsCoordinator.navigationController, title: "NEWS", image: newsImage),
                 generateNavController(for: statisticsCoordinator.navigationController, title: "STATISTICS", image: statisticsImage),
                 generateNavController(for: tableCoordinator.navigationController, title: "TOURNAMENT", image: tableImage),
-                generateNavController(for: matchesCoordinator.navigationController, title: "MATCHES", image: matchesImage),
             ]
         
         guard let items = mainTabBarController.tabBar.items else { return }

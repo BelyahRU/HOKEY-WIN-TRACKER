@@ -60,8 +60,12 @@ class HomeView: UIView {
     
     public let completedCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 28, height: 209)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
