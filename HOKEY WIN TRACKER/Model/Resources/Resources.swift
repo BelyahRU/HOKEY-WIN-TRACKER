@@ -26,6 +26,7 @@ enum Resources {
         static let filterButton = "filterButton"
         static let reloadButton = "reloadButton"
         static let shareButton = "shareButton"
+        static let backButton = "backButton"
     }
     
     enum Colors {
@@ -34,6 +35,8 @@ enum Resources {
         static let lightBlueColor = UIColor(red: 0xB1 / 255.0, green: 0xE7 / 255.0, blue: 0xFF / 255.0, alpha: 1.0)
         static let cellsColor = UIColor(red: 0x01 / 255.0, green: 0x26 / 255.0, blue: 0x37 / 255.0, alpha: 1.0)
         static let grayColor = UIColor(red: 193/255, green: 193/255, blue: 193/255, alpha: 1.0)
+
+        static let yellowColor = UIColor(red: 255/255, green: 178/255, blue: 71/255, alpha: 1)
 
         static let leadersTextColor = UIColor(red: 50/255, green: 205/255, blue: 50/255, alpha: 1.0)
         static let outsidersTextColor = UIColor(red: 255/255, green: 99/255, blue: 71/255, alpha: 1.0)

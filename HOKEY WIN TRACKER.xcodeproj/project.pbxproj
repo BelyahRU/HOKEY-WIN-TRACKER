@@ -40,7 +40,11 @@
 		1ACA93BA2CB1A65E00F4B103 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93B92CB1A65E00F4B103 /* TeamCell.swift */; };
 		1ACA93BC2CB1B2E000F4B103 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */; };
 		1ACA93BE2CB1B33B00F4B103 /* HomeVC + Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93BD2CB1B33B00F4B103 /* HomeVC + Action.swift */; };
-		1ACA93C12CB1E9A100F4B103 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C02CB1E9A100F4B103 /* MatchViewController.swift */; };
+		1ACA93C12CB1E9A100F4B103 /* TeamProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C02CB1E9A100F4B103 /* TeamProfileViewController.swift */; };
+		1ACA93C32CB1EA1800F4B103 /* TeamProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C22CB1EA1800F4B103 /* TeamProfileView.swift */; };
+		1ACA93C52CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C42CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift */; };
+		1ACA93C72CB1F2F900F4B103 /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C62CB1F2F900F4B103 /* PlayerCollectionViewCell.swift */; };
+		1ACA93C92CB1F71000F4B103 /* TeamProfileVC + Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C82CB1F71000F4B103 /* TeamProfileVC + Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +82,11 @@
 		1ACA93B92CB1A65E00F4B103 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		1ACA93BD2CB1B33B00F4B103 /* HomeVC + Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + Action.swift"; sourceTree = "<group>"; };
-		1ACA93C02CB1E9A100F4B103 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		1ACA93C02CB1E9A100F4B103 /* TeamProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileViewController.swift; sourceTree = "<group>"; };
+		1ACA93C22CB1EA1800F4B103 /* TeamProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileView.swift; sourceTree = "<group>"; };
+		1ACA93C42CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileVC + CollectionView.swift"; sourceTree = "<group>"; };
+		1ACA93C62CB1F2F900F4B103 /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
+		1ACA93C82CB1F71000F4B103 /* TeamProfileVC + Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileVC + Action.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +143,11 @@
 				1ACA93A02CB16F5900F4B103 /* NewsViewController */,
 				1ACA93952CB0BC9500F4B103 /* HomeViewController */,
 				1ACA93782CB0AD4A00F4B103 /* MainTabBarController */,
-				1ACA93C02CB1E9A100F4B103 /* MatchViewController.swift */,
+				1ACA93C02CB1E9A100F4B103 /* TeamProfileViewController.swift */,
+				1ACA93C82CB1F71000F4B103 /* TeamProfileVC + Action.swift */,
+				1ACA93C42CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift */,
+				1ACA93C62CB1F2F900F4B103 /* PlayerCollectionViewCell.swift */,
+				1ACA93C22CB1EA1800F4B103 /* TeamProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,12 +383,16 @@
 				1ACA93A42CB1712900F4B103 /* NewsVC + CollectionView.swift in Sources */,
 				1ACA93A22CB16F7800F4B103 /* NewsView.swift in Sources */,
 				1ACA939D2CB0C2D400F4B103 /* UpcomingCollectionViewCell.swift in Sources */,
+				1ACA93C72CB1F2F900F4B103 /* PlayerCollectionViewCell.swift in Sources */,
 				1ACA93B62CB1A48600F4B103 /* SectionHeaderView.swift in Sources */,
+				1ACA93C32CB1EA1800F4B103 /* TeamProfileView.swift in Sources */,
 				1ACA93892CB0B0E000F4B103 /* NewsCoordinator.swift in Sources */,
 				1ACA93742CB0AAF900F4B103 /* MainTabBarCoordinator.swift in Sources */,
 				1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */,
+				1ACA93C92CB1F71000F4B103 /* TeamProfileVC + Action.swift in Sources */,
+				1ACA93C52CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift in Sources */,
 				1ACA93BE2CB1B33B00F4B103 /* HomeVC + Action.swift in Sources */,
-				1ACA93C12CB1E9A100F4B103 /* MatchViewController.swift in Sources */,
+				1ACA93C12CB1E9A100F4B103 /* TeamProfileViewController.swift in Sources */,
 				1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */,
 				1ACA939A2CB0C1F800F4B103 /* HomeVC + CollectionViews.swift in Sources */,
 				1ACA93822CB0AF4300F4B103 /* TableViewController.swift in Sources */,
