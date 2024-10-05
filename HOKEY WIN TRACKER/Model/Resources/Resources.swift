@@ -18,6 +18,7 @@ enum Resources {
     enum Buttons {
         static let filterButton = "filterButton"
         static let reloadButton = "reloadButton"
+        static let shareButton = "shareButton"
     }
     
     enum Colors {

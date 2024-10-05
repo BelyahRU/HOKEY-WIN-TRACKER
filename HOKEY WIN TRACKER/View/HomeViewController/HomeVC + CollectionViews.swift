@@ -45,7 +45,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView != homeView.upcomingCollectionView {
             let height: CGFloat = cellHeights[indexPath.row] ? 287 : 201
-            return CGSize(width: collectionView.frame.width - 28, height: height)
+            return CGSize(width: collectionView.frame.width, height: height)
         } else {
             return CGSize(width: 245, height: 101)
         }
