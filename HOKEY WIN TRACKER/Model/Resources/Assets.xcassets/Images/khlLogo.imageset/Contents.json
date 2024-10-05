@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Kontinental_Hockey_League-OeqC9zWJ1_brandlogos.net 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Kontinental_Hockey_League-OeqC9zWJ1_brandlogos.net 1-2.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Kontinental_Hockey_League-OeqC9zWJ1_brandlogos.net 1-3.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -45,11 +45,11 @@ class MainTabBarCoordinator: Coordinator {
         childCoordinators.append(matchesCoordinator)
         matchesCoordinator.start()
         
-        let homeImage = UIImage(named: Resources.Icons.UnselectedIcons.homeIcon)
-        let newsImage = UIImage(named: Resources.Icons.UnselectedIcons.newsIcon)
-        let statisticsImage = UIImage(named: Resources.Icons.UnselectedIcons.statisticsIcon)
-        let tableImage = UIImage(named: Resources.Icons.UnselectedIcons.tableIcon)
-        let matchesImage = UIImage(named: Resources.Icons.UnselectedIcons.matchesIcon)
+        let homeImage = UIImage(named: Resources.Icons.homeIcon)
+        let newsImage = UIImage(named: Resources.Icons.newsIcon)
+        let statisticsImage = UIImage(named: Resources.Icons.statisticsIcon)
+        let tableImage = UIImage(named: Resources.Icons.tableIcon)
+        let matchesImage = UIImage(named: Resources.Icons.matchesIcon)
 
         mainTabBarController.viewControllers = [
                 generateNavController(for: homeCoordinator.navigationController, title: "HOME", image: homeImage),
@@ -73,7 +73,7 @@ class MainTabBarCoordinator: Coordinator {
         navigationController.pushViewController(mainTabBarController, animated: true)
     }
     public func generateNavController(for navController: UINavigationController, title: String, image: UIImage?) -> UINavigationController {
-        let title = title.split(separator: " ").joined(separator: "\n")
+        
         navController.tabBarItem.title = title
         
         navController.tabBarItem.image = image
