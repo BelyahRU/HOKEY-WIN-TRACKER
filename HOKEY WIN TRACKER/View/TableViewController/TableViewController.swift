@@ -1,23 +1,38 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+protocol TableVCDelegate: AnyObject {
+    func showUI()
+    func showError()
+}
+
+class TableViewController: UIViewController, TableVCDelegate {
     
     weak var coordinator: TableCoordinator?
     
     let tableView = TableView()
-    
-     let leadingTeams = ["1", "2", "3", "4", "5"]
-     let outsiderTeams = ["6", "7", "8", "9", "10", "11"]
-
+    var viewModel: TableViewModel!
+    var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configure()
+        setupViewModel()
     }
     
-    private func configure() {
+    private func setupViewModel() {
+        activityIndicator = UIActivityIndicatorView()
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        viewModel = TableViewModel()
+        viewModel.delegate = self
+    }
+    
+    public func configure() {
         setupUI()
         setupCollectionView()
     }
@@ -30,5 +45,16 @@ class TableViewController: UIViewController {
         }
     }
     
+    func showUI() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        configure()
+    }
+    
+    func showError() {
+        //error
+    }
+    
 
 }
+

@@ -45,6 +45,9 @@
 		1ACA93C52CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C42CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift */; };
 		1ACA93C72CB1F2F900F4B103 /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C62CB1F2F900F4B103 /* PlayerCollectionViewCell.swift */; };
 		1ACA93C92CB1F71000F4B103 /* TeamProfileVC + Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93C82CB1F71000F4B103 /* TeamProfileVC + Action.swift */; };
+		1AE9875D2CB4124600255BB6 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9875C2CB4124600255BB6 /* NetworkConstants.swift */; };
+		1AE9875F2CB4141E00255BB6 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9875E2CB4141E00255BB6 /* APICaller.swift */; };
+		1AE987612CB429CD00255BB6 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE987602CB429CD00255BB6 /* TableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +90,9 @@
 		1ACA93C42CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileVC + CollectionView.swift"; sourceTree = "<group>"; };
 		1ACA93C62CB1F2F900F4B103 /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1ACA93C82CB1F71000F4B103 /* TeamProfileVC + Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamProfileVC + Action.swift"; sourceTree = "<group>"; };
+		1AE9875C2CB4124600255BB6 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		1AE9875E2CB4141E00255BB6 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		1AE987602CB429CD00255BB6 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 		1ACA936B2CB0A98E00F4B103 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1AE987602CB429CD00255BB6 /* TableViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 		1ACA936D2CB0A99A00F4B103 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1AE9875B2CB4123A00255BB6 /* Network */,
 				1ACA93702CB0A9B600F4B103 /* Support */,
 				1ACA936F2CB0A9A600F4B103 /* Resources */,
 			);
@@ -290,6 +298,15 @@
 			path = TableViewController;
 			sourceTree = "<group>";
 		};
+		1AE9875B2CB4123A00255BB6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1AE9875C2CB4124600255BB6 /* NetworkConstants.swift */,
+				1AE9875E2CB4141E00255BB6 /* APICaller.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,11 +383,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE9875D2CB4124600255BB6 /* NetworkConstants.swift in Sources */,
 				1ACA93722CB0AAA600F4B103 /* Coordinator.swift in Sources */,
 				1ACA93A82CB171CC00F4B103 /* NewsCollectionViewCell.swift in Sources */,
 				1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */,
 				1ACA937A2CB0AD7300F4B103 /* MainTabBarController.swift in Sources */,
 				1ACA93B82CB1A4A300F4B103 /* TableVC + CollectionView.swift in Sources */,
+				1AE9875F2CB4141E00255BB6 /* APICaller.swift in Sources */,
 				1ACA93B02CB17AA800F4B103 /* StatisticsVC + CollectionView.swift in Sources */,
 				1ACA93AE2CB17A9A00F4B103 /* StatisticsCollectionViewCell.swift in Sources */,
 				1ACA93B42CB1875300F4B103 /* TableView.swift in Sources */,
@@ -379,6 +398,7 @@
 				1ACA93802CB0AF3500F4B103 /* StatisticsViewController.swift in Sources */,
 				1ACA93982CB0BCA700F4B103 /* HomeView.swift in Sources */,
 				1ACA93912CB0B65400F4B103 /* Resources.swift in Sources */,
+				1AE987612CB429CD00255BB6 /* TableViewModel.swift in Sources */,
 				1ACA938B2CB0B0F100F4B103 /* StatisticsCoordinator.swift in Sources */,
 				1ACA93A42CB1712900F4B103 /* NewsVC + CollectionView.swift in Sources */,
 				1ACA93A22CB16F7800F4B103 /* NewsView.swift in Sources */,

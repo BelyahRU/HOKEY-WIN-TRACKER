@@ -17,15 +17,20 @@ extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return section == 0 ? leadingTeams.count : outsiderTeams.count
+        return section == 0 ? 5 : viewModel.getCountItems() - 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TeamCell.identifier, for: indexPath) as! TeamCell
+//        let teamName = indexPath.section == 0 ? leadingTeams[indexPath.item] : outsiderTeams[indexPath.item]
         
-        let teamName = indexPath.section == 0 ? leadingTeams[indexPath.item] : outsiderTeams[indexPath.item]
-        
-        cell.configure(with: teamName, section: indexPath.section)
+        var match: TeamStanding
+        if indexPath.section != 0 {
+            match = viewModel.getTeam(by: indexPath.row + 5)
+        } else {
+            match = viewModel.getTeam(by: indexPath.row)
+        }
+        cell.configure(with: match, section: indexPath.section)
         return cell
     }
 

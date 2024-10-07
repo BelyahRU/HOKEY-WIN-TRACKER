@@ -220,13 +220,23 @@ class TeamCell: UICollectionViewCell {
         }
     }
     
-    func configure(with title: String, section: Int) {
+    func configure(with match: TeamStanding, section: Int) {
         switch section {
         case 0:
             backImage.image = UIImage(named: Resources.Images.leaderCell)
+            teamNumberLabel.text = match.pos
+            
         default:
             backImage.image = UIImage(named: Resources.Images.outsiderCell)
+            teamNumberLabel.text = match.pos
+            
         }
-        teamNumberLabel.text = title
+        
+        points.text = match.points
+        defeats.text = match.loss
+        victories.text = match.win
+        abandonedPucks.text = match.goalsfor
+        missedPucks.text = match.goalsagainst
+        print(match.team.id)
     }
 }
