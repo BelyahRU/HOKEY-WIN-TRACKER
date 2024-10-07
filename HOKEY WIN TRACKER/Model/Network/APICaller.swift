@@ -11,7 +11,7 @@ enum APIError: Error {
 // Структура для хранения данных о команде
 struct TeamStanding: Codable {
     let pos: String            // Позиция в таблице
-    let team: TeamInfo         // Информация о команде
+    var team: TeamInfo         // Информация о команде
     let win: String            // Количество побед
     let loss: String           // Количество поражений
     let goalsfor: String       // Количество заброшенных шайб
@@ -20,9 +20,12 @@ struct TeamStanding: Codable {
 }
 
 // Структура для информации о команде
+// Структура для информации о команде
 struct TeamInfo: Codable {
     let id: String             // Идентификатор команды
     let name: String           // Название команды
+    let image_id: String// URL изображения команды
+    var imageData: Data?
 }
 
 // Структура для всего ответа API
@@ -63,10 +66,9 @@ class KHLAPI {
 
     private init() {}
 
-    // Функция для получения турнирной таблицы
     func fetchStandings(completion: @escaping (Result<[TeamStanding], APIError>) -> Void) {
         let urlString = "\(baseURL)league/table?token=\(token)&league_id=128"
-        
+        print(urlString)
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidURL))
             return
@@ -76,13 +78,11 @@ class KHLAPI {
         request.httpMethod = "GET"
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            // Проверка на наличие ошибки
             if let error = error {
                 completion(.failure(.serverError(error.localizedDescription)))
                 return
             }
 
-            // Проверка на наличие данных
             guard let data = data else {
                 completion(.failure(.noData))
                 return
@@ -92,19 +92,37 @@ class KHLAPI {
                 let decoder = JSONDecoder()
                 let standingsResponse = try decoder.decode(StandingsResponse.self, from: data)
 
-                // Проверка на наличие таблиц в данных сезона
                 guard let tables = standingsResponse.results.first?.overall?.tables else {
                     completion(.failure(.noData))
                     return
                 }
 
-                // Фильтрация таблиц, где groupname == nil
                 let filteredTables = tables.filter { $0.groupname == nil }
 
-                // Извлечение строк из отфильтрованных таблиц
-                let rows = filteredTables.compactMap { $0.rows }.flatMap { $0 }
+                var rows = filteredTables.compactMap { $0.rows }.flatMap { $0 }
 
-                completion(.success(rows))
+                let dispatchGroup = DispatchGroup()
+
+                for i in 0..<rows.count {
+                    let image_id = rows[i].team.image_id
+                    
+                    dispatchGroup.enter()
+                    self.loadImage(for: image_id) { result in
+                        switch result {
+                        case .success(let imageData):
+                            rows[i].team.imageData = imageData
+                        case .failure(let error):
+                            print("Не удалось загрузить изображение для команды \(image_id): \(error)")
+                        }
+                        
+                        dispatchGroup.leave()
+                    }
+                }
+
+                dispatchGroup.notify(queue: .main) {
+                    completion(.success(rows))
+                }
+
             }  catch {
                 completion(.failure(.decodingFailed(error)))
             }
@@ -112,4 +130,30 @@ class KHLAPI {
 
         task.resume()
     }
+    
+        func loadImage(for teamID: String, completion: @escaping (Result<Data, APIError>) -> Void) {
+            // Формирование URL-адреса для изображения
+            guard let imageURL = URL(string: "https://assets.b365api.com/images/team/m/\(teamID).png") else {
+                completion(.failure(.invalidURL))
+                return
+            }
+            print(imageURL)
+            
+            // Выполнение запроса для загрузки изображения
+            let task = URLSession.shared.dataTask(with: imageURL) { data, response, error in
+                if let error = error {
+                    completion(.failure(.serverError(error.localizedDescription)))
+                    return
+                }
+                
+                guard let data = data else {
+                    completion(.failure(.noData))
+                    return
+                }
+                
+                completion(.success(data))
+            }
+            
+            task.resume()
+        }
 }

@@ -21,7 +21,7 @@ class TeamCell: UICollectionViewCell {
     
     private let teamLogoImageView: UIImageView = {
          let im = UIImageView()
-         im.image = UIImage(named: "skaLogo")
+//         im.image = UIImage(named: "skaLogo")
          im.contentMode = .scaleAspectFit
          return im
      }()
@@ -61,7 +61,7 @@ class TeamCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "26"
+//        label.text = "26"
         label.backgroundColor = .clear
         return label
     }()
@@ -71,7 +71,7 @@ class TeamCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "2"
+//        label.text = "2"
         label.backgroundColor = .clear
         return label
     }()
@@ -81,7 +81,7 @@ class TeamCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "53.5"
+//        label.text = "53.5"
         label.backgroundColor = .clear
         return label
     }()
@@ -105,7 +105,7 @@ class TeamCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = Resources.Colors.leadersTextColor
         label.textAlignment = .center
-        label.text = "16"
+//        label.text = "16"
         label.backgroundColor = .clear
         return label
     }()
@@ -115,7 +115,7 @@ class TeamCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = Resources.Colors.outsidersTextColor
         label.textAlignment = .center
-        label.text = "3"
+//        label.text = "3"
         label.backgroundColor = .clear
         return label
     }()
@@ -220,23 +220,34 @@ class TeamCell: UICollectionViewCell {
         }
     }
     
-    func configure(with match: TeamStanding, section: Int) {
+    func configure(with team: TeamStanding, section: Int) {
         switch section {
         case 0:
             backImage.image = UIImage(named: Resources.Images.leaderCell)
-            teamNumberLabel.text = match.pos
+            teamNumberLabel.text = team.pos
             
         default:
             backImage.image = UIImage(named: Resources.Images.outsiderCell)
-            teamNumberLabel.text = match.pos
+            teamNumberLabel.text = team.pos
             
         }
         
-        points.text = match.points
-        defeats.text = match.loss
-        victories.text = match.win
-        abandonedPucks.text = match.goalsfor
-        missedPucks.text = match.goalsagainst
-        print(match.team.id)
+        points.text = team.points
+        defeats.text = team.loss
+        victories.text = team.win
+        abandonedPucks.text = team.goalsfor
+        missedPucks.text = team.goalsagainst
+        print(team.team.imageData)
+        teamLogoImageView.image = UIImage(data: team.team.imageData ?? Data())
+    }
+    
+    private func loadImage(from url: URL, into imageView: UIImageView) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    imageView.image = image
+                }
+            }
+        }
     }
 }
