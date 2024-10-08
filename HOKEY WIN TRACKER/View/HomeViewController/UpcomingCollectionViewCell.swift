@@ -15,21 +15,18 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
     
     let firstTeamImageView: UIImageView = {
         let im = UIImageView()
-        im.image = UIImage(named: "skaLogo")
         im.contentMode = .scaleAspectFit
         return im
     }()
     
     let secondTeamImageView: UIImageView = {
         let im = UIImageView()
-        im.image = UIImage(named: "sochiLogo")
         im.contentMode = .scaleAspectFit
         return im
     }()
     
     let dateLabel: UILabel = {
        let label = UILabel()
-        label.text = "24.09"
         label.backgroundColor = .clear
         label.textColor = Resources.Colors.orangeColor
         label.font = UIFont.systemFont(ofSize: 12)
@@ -45,7 +42,6 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
     
     let timeLabel: UILabel = {
        let label = UILabel()
-        label.text = "22:20"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .black
@@ -55,7 +51,7 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
     
     let stadiumLabel: UILabel = {
        let label = UILabel()
-        label.text = "Stadium: 'Татнефть Арена'"
+        label.text = ""
         label.textColor = .white
         label.numberOfLines = 0
         label.textAlignment = .left
@@ -136,5 +132,14 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
             make.leading.equalTo(secondTeamImageView.snp.trailing).offset(20)
             make.width.equalTo(155)
         }
+    }
+    
+    public func setupCell(_ match: UpcomingMatch) {
+        firstTeamImageView.image = UIImage(data: match.firstTeamImage ?? Data())
+        secondTeamImageView.image = UIImage(data: match.secondTeamImage ?? Data())
+        let date = DateHelper.formatDate(from: match.time)
+        let time = DateHelper.formatTime(from: match.time)
+        timeLabel.text = time
+        dateLabel.text = date
     }
 }

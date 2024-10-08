@@ -23,4 +23,8 @@ class HomeCoordinator: Coordinator {
         navigationController.pushViewController(homeVC, animated: true)
     }
     
+    func showError() {
+        parentCoordinator?.showError()
+    }
+    
 }

@@ -6,18 +6,16 @@ class TableViewModel {
     
     weak var delegate: TableViewController?
     
-    private let khlCaller = KHLAPI.shared
+    private let khlFetcher = KHLFetcher.shared
     private(set) var teamsArray:[TeamStanding] = []
     
     init() {
-        khlCaller.fetchStandings { result in
+        khlFetcher.getKHLTable { result in
             switch result {
             case .success(let standings):
-                print("Турнирная таблица КХЛ:")
                 self.teamsArray = standings
                 self.delegate(isTableLoaded: true)
             case .failure(let error):
-                print("Ошибка загрузки турнирной таблицы: \(error)")
                 self.delegate(isTableLoaded: false)
             }
         }
@@ -35,8 +33,6 @@ class TableViewModel {
     }
     
     public func getTeam(by id: Int) -> TeamStanding {
-        print(teamsArray.count)
-        print(id)
         return teamsArray[id]
     }
     

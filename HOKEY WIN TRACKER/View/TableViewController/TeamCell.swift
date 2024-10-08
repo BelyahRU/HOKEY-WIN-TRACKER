@@ -237,7 +237,6 @@ class TeamCell: UICollectionViewCell {
         victories.text = team.win
         abandonedPucks.text = team.goalsfor
         missedPucks.text = team.goalsagainst
-        print(team.team.imageData)
         teamLogoImageView.image = UIImage(data: team.team.imageData ?? Data())
     }
     

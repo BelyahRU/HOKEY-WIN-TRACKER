@@ -20,23 +20,28 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == homeView.upcomingCollectionView {
-            return 20
+            return viewModel.getCountUpcomingItems()
         } else {
-            return 20
+            return viewModel.getCountEndedItems()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == homeView.upcomingCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UpcomingCollectionViewCell.reuseId, for: indexPath) as? UpcomingCollectionViewCell else {
+                
                 return UICollectionViewCell()
             }
+            let match = viewModel.getUpcomingMatch(by: indexPath.row)
+            cell.setupCell(match)
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CompletedCollectionViewCell.reuseId, for: indexPath) as? CompletedCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            let match = viewModel.getEndedMatch(by: indexPath.row)
             cell.isExpanded = cellHeights[indexPath.row]
+            cell.setupCell(match)
             return cell
         }
     }

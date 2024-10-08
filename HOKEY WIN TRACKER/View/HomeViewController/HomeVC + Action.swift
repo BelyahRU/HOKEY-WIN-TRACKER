@@ -5,11 +5,22 @@ import UIKit
 extension HomeViewController {
     func setupButtons() {
         homeView.filterButton.addTarget(self, action: #selector(showFilterView), for: .touchUpInside)
+        homeView.reloadButton.addTarget(self, action: #selector(reloadPressed), for: .touchUpInside)
         filterView.applyButton.addTarget(self, action: #selector(applyFilter), for: .touchUpInside)
         filterView.closeButton.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
     }
     
-    @objc private func showFilterView() {
+    @objc
+    func reloadPressed() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let delegate = windowScene.delegate as? SceneDelegate else {
+            return
+        }
+        delegate.start()
+    }
+    
+    @objc
+    private func showFilterView() {
         if filterView.isHidden {
             filterView.isHidden = false
             UIView.animate(withDuration: 0.3) {

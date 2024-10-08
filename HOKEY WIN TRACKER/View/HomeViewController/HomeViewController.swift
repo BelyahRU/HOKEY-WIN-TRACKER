@@ -2,20 +2,39 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
+protocol HomeViewControllerDelegate: AnyObject {
+    func showUI()
+}
+
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeViewControllerDelegate {
   
     weak var coordinator: HomeCoordinator?
     var homeView = HomeView()
+    var viewModel: HomeViewModel!
 
-    var cellHeights: [Bool] = Array(repeating: false, count: 20)
+    var cellHeights: [Bool]!
     let filterView = FilterView()
+    var activityIndicator: UIActivityIndicatorView!
 
+    var errorVC = ErrorViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleCellExpansion(_:)), name: NSNotification.Name("cellExpansionChanged"), object: nil)
+        view.backgroundColor = Resources.Colors.blueColor
+        setupViewModel()
 
+    }
+    
+    private func setupViewModel() {
+        activityIndicator = UIActivityIndicatorView()
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        viewModel = HomeViewModel()
+        viewModel.delegate = self
     }
 
     @objc private func handleCellExpansion(_ notification: Notification) {
@@ -31,6 +50,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         setupUpcomingCollectionView()
         setupCompletedCollectionView()
         setupButtons()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCellExpansion(_:)), name: NSNotification.Name("cellExpansionChanged"), object: nil)
     }
 
     private func setupUI() {
@@ -50,32 +70,14 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-
+    func showUI() {
+        cellHeights = Array(repeating: false, count: viewModel.getCountEndedItems())
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        configure()
+    }
+    
+    func showError() {
+        self.coordinator?.showError()
+    }
 }
-//import Foundation
-//import UIKit
-//
-//class HomeView: UIView {
-//    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        configure()
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    private func configure() {
-//        setupSubviews()
-//        setupConstraints()
-//    }
-//    
-//    private func setupSubviews() {
-//        
-//    }
-//    
-//    private func setupConstraints() {
-//        
-//    }
-//}

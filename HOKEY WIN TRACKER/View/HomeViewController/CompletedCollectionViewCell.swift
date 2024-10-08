@@ -15,21 +15,18 @@ class CompletedCollectionViewCell: UICollectionViewCell {
     
     let firstTeamImageView: UIImageView = {
         let im = UIImageView()
-        im.image = UIImage(named: "skaLogo")
         im.contentMode = .scaleAspectFit
         return im
     }()
     
     let secondTeamImageView: UIImageView = {
         let im = UIImageView()
-        im.image = UIImage(named: "sochiLogo")
         im.contentMode = .scaleAspectFit
         return im
     }()
     
     let dateLabel: UILabel = {
        let label = UILabel()
-        label.text = "23.01.2024 (22:00)"
         label.backgroundColor = .clear
         label.textColor = .white.withAlphaComponent(0.5)
         label.font = UIFont.systemFont(ofSize: 12)
@@ -38,9 +35,9 @@ class CompletedCollectionViewCell: UICollectionViewCell {
     
     let firstTeamNameLabel: UILabel = {
        let label = UILabel()
-        label.text = "SKA"
         label.backgroundColor = .clear
         label.numberOfLines = 0
+        label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 12)
         return label
@@ -48,9 +45,9 @@ class CompletedCollectionViewCell: UICollectionViewCell {
     
     let secondTeamNameLabel: UILabel = {
        let label = UILabel()
-        label.text = "SOCHI"
         label.numberOfLines = 0
         label.backgroundColor = .clear
+        label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 12)
         return label
@@ -58,7 +55,6 @@ class CompletedCollectionViewCell: UICollectionViewCell {
     
     let finalScoreLabel: UILabel = {
        let label = UILabel()
-        label.text = "1-2"
         label.backgroundColor = .clear
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
@@ -67,7 +63,6 @@ class CompletedCollectionViewCell: UICollectionViewCell {
     
     let infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "During the current match, there were 34 passes of the puck, 15 dangerous moments and 10 penalties"
         label.backgroundColor = .clear
         label.textColor = Resources.Colors.lightBlueColor
         label.font = UIFont.systemFont(ofSize: 12)
@@ -146,11 +141,13 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         firstTeamNameLabel.snp.makeConstraints { make in
             make.top.equalTo(firstTeamImageView.snp.bottom)
             make.centerX.equalTo(firstTeamImageView.snp.centerX)
+            make.width.equalTo(120)
         }
         
         secondTeamNameLabel.snp.makeConstraints { make in
             make.top.equalTo(secondTeamImageView.snp.bottom)
             make.centerX.equalTo(secondTeamImageView.snp.centerX)
+            make.width.equalTo(120)
         }
         
         dateLabel.snp.makeConstraints { make in
@@ -199,5 +196,14 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         moreDetailsButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         moreDetailsButton.isHidden = false
         NotificationCenter.default.post(name: NSNotification.Name("cellExpansionChanged"), object: nil, userInfo: ["cell": self])
+    }
+    
+    public func setupCell(_ match: EndedMatch) {
+        firstTeamImageView.image = UIImage(data: match.firstTeamImage ?? Data())
+        secondTeamImageView.image = UIImage(data: match.secondTeamImage ?? Data())
+        finalScoreLabel.text = match.ss ?? "0-0"
+        firstTeamNameLabel.text = match.home.name
+        secondTeamNameLabel.text = match.away.name
+        dateLabel.text = DateHelper.formatUnixTime(match.time) ?? ""
     }
 }

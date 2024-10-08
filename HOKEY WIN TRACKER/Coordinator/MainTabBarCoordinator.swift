@@ -12,6 +12,8 @@ class MainTabBarCoordinator: Coordinator {
     var statisticsCoordinator: StatisticsCoordinator!
     var tableCoordinator: TableCoordinator!
     
+    var errorVC: ErrorViewController!
+    
     init() {
         self.navigationController = UINavigationController()
         self.navigationController.navigationBar.isHidden = true
@@ -64,6 +66,12 @@ class MainTabBarCoordinator: Coordinator {
         mainTabBarController = MainTabBarController()
         mainTabBarController.coordinator = self
         navigationController.pushViewController(mainTabBarController, animated: true)
+    }
+    
+    func showError() {
+        errorVC = ErrorViewController()
+        mainTabBarController.tabBar.isHidden = true
+        navigationController.pushViewController(errorVC, animated: true)
     }
     public func generateNavController(for navController: UINavigationController, title: String, image: UIImage?) -> UINavigationController {
         
