@@ -9,8 +9,11 @@ class HomeViewModel {
     private let khlFetcher = KHLFetcher.shared
     private(set) var upcomingMatches:[UpcomingMatch] = []
     private(set) var endedMatches:[EndedMatch] = []
+    private(set) var filtredUpcomingMatches:[UpcomingMatch] = []
+    private(set) var filtredEndedMatches:[EndedMatch] = []
     private var counter = 0
     private var isError = false
+    private var isFiltered = false
     
     init() {
         khlFetcher.getUpcomingMatches { result in
@@ -56,18 +59,72 @@ class HomeViewModel {
     }
     //MARK: - Upcoming
     public func getUpcomingMatch(by id: Int) -> UpcomingMatch {
+        if isFiltered {
+            return filtredUpcomingMatches[id]
+        }
+        
         return upcomingMatches[id]
     }
     
     public func getCountUpcomingItems() -> Int {
+        if isFiltered {
+            return filtredUpcomingMatches.count
+        }
         return upcomingMatches.count
     }
     //MARK: - Ended
     public func getEndedMatch(by id: Int) -> EndedMatch {
+        if isFiltered {
+            return filtredEndedMatches[id]
+        }
         return endedMatches[id]
     }
     public func getCountEndedItems() -> Int {
-        return upcomingMatches.count
+        if isFiltered {
+            return filtredEndedMatches.count
+        }
+        return endedMatches.count
     }
+    
+    public func setupFilter(date: Date?, teamName: String?) {
+        // Сброс фильтрованных массивов
+        filtredUpcomingMatches = upcomingMatches
+        filtredEndedMatches = endedMatches
 
+        // Фильтрация по дате
+        if let date = date {
+            let calendar = Calendar.current
+            let startOfDay = calendar.startOfDay(for: date)
+            let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+            
+            filtredUpcomingMatches = filtredUpcomingMatches.filter { match in
+                let matchDate = Date(timeIntervalSince1970: Double(match.time) ?? 0)
+                return matchDate >= date
+            }
+            
+            filtredEndedMatches = filtredEndedMatches.filter { match in
+                let matchDate = Date(timeIntervalSince1970: Double(match.time) ?? 0)
+                return matchDate >= date
+            }
+            isFiltered = true
+        }
+        
+        // Фильтрация по названию команды
+        if let teamName = teamName, !teamName.isEmpty {
+            filtredUpcomingMatches = filtredUpcomingMatches.filter { match in
+                return match.home.name.lowercased().contains(teamName.lowercased()) ||
+                       match.away.name.lowercased().contains(teamName.lowercased())
+            }
+            
+            filtredEndedMatches = filtredEndedMatches.filter { match in
+                return match.home.name.lowercased().contains(teamName.lowercased()) ||
+                       match.away.name.lowercased().contains(teamName.lowercased())
+            }
+            isFiltered = true
+        }
+        
+        // Обновление UI или уведомление о фильтрации (при необходимости)
+        // Например:
+        self.delegate?.reloadUI()
+    }
 }

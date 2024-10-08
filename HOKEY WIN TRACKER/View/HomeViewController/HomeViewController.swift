@@ -15,6 +15,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
     var cellHeights: [Bool]!
     let filterView = FilterView()
     var activityIndicator: UIActivityIndicatorView!
+    var isFilterActive = false
 
     var errorVC = ErrorViewController()
 
@@ -64,7 +65,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
 
         filterView.snp.makeConstraints { make in
             make.width.equalToSuperview()
-            make.height.equalTo(440)
+            make.height.equalTo(460)
             make.centerX.equalToSuperview()
             make.top.equalTo(view.snp.bottom)
         }
@@ -77,6 +78,11 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
         configure()
     }
     
+    func reloadUI() {
+        homeView.upcomingCollectionView.reloadData()
+        homeView.completedCollectionView.reloadData()
+        self.view.layoutIfNeeded()
+    }
     func showError() {
         self.coordinator?.showError()
     }

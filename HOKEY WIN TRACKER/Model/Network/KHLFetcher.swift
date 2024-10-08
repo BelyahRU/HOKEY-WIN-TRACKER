@@ -11,7 +11,7 @@ class KHLFetcher {
     private let baseURL = "https://api.b365api.com/v3"
     private let league_id = "128" //KHL
     private let sport_id = "17" //Ice hockey
-    
+//https://api.b365api.com/v1/league/toplist?token=204037-oqW58jK8v0i1Sx&league_id=128
     private init() { }
     
     //MARK: - UPCOMING

@@ -47,7 +47,8 @@ class FilterView: UIView {
     
     public let instructionsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Enter a date or/and a team name to filter results."
+        label.text = "Select a date range and/or enter a team name to filter results. Matches will be sorted to show only those after the selected date."
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .gray

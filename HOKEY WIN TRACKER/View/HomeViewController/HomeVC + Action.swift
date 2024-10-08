@@ -25,7 +25,7 @@ extension HomeViewController {
             filterView.isHidden = false
             UIView.animate(withDuration: 0.3) {
                 self.filterView.snp.updateConstraints { make in
-                    make.top.equalTo(self.view.snp.bottom).offset(-400)
+                    make.top.equalTo(self.view.snp.bottom).offset(-420)
                 }
                 self.view.layoutIfNeeded()
             }
@@ -57,11 +57,9 @@ extension HomeViewController {
     }
 
     @objc private func applyFilter() {
-        guard let teamName = filterView.teamTextField.text, !teamName.isEmpty else {
-            showAlert(title: "Error", message: "Please enter a team name.")
-            return
-        }
-        
+        let date = filterView.datePicker.date
+        let teamName = filterView.teamTextField.text
+        viewModel.setupFilter(date: date, teamName: teamName ?? "")
         UIView.animate(withDuration: 0.3) {
             self.filterView.snp.updateConstraints { make in
                 make.top.equalTo(self.view.snp.bottom)
