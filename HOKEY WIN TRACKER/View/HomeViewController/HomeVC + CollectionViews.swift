@@ -42,6 +42,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let match = viewModel.getEndedMatch(by: indexPath.row)
             cell.isExpanded = cellHeights[indexPath.row]
             cell.setupCell(match)
+            
+
             return cell
         }
     }

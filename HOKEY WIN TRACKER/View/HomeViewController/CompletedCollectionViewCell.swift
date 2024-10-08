@@ -360,5 +360,14 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         firstPeriodResult.text = (match.scores["1"]?.home ?? "0") + "-" + (match.scores["1"]?.away ?? "0")
         secondPeriodResult.text = (match.scores["2"]?.home ?? "0") + "-" + (match.scores["2"]?.away ?? "0")
         thirdPeriodResult.text = (match.scores["3"]?.home ?? "0") + "-" + (match.scores["3"]?.away ?? "0")
+        
+        
+        // Скрыть или показать элементы на основе состояния
+        firstPeriodResultLabel.isHidden = !isExpanded
+        secondPeriodResultLabel.isHidden = !isExpanded
+        thirdPeriodResultLabel.isHidden = !isExpanded
+        firstPeriodResult.isHidden = !isExpanded
+        secondPeriodResult.isHidden = !isExpanded
+        thirdPeriodResult.isHidden = !isExpanded
     }
 }
