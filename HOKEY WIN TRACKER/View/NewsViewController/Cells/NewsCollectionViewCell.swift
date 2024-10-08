@@ -94,7 +94,6 @@ class NewsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(_ news: NewsModel) {
-        print(news)
         imageView.image = UIImage(named: news.imageName)
         newsTitleLabel.text = news.title
         infoLabel.text = news.text

@@ -32,6 +32,7 @@ class TeamProfileView: UIView {
         label.text = "SPARTAK"
         label.backgroundColor = .clear
         label.numberOfLines = 0
+        label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 18)
         return label
@@ -59,7 +60,7 @@ class TeamProfileView: UIView {
     
     private let trainerLabel: UILabel = {
         let label = UILabel()
-         label.text = "TRAINER"
+         label.text = "LEAGUE"
          label.backgroundColor = .clear
          label.numberOfLines = 0
          label.textColor = Resources.Colors.grayColor
@@ -69,7 +70,7 @@ class TeamProfileView: UIView {
     
     let trainer: UILabel = {
         let label = UILabel()
-         label.text = "Alexey Zhamnov"
+         label.text = "KHL"
          label.backgroundColor = .clear
          label.numberOfLines = 0
         label.textColor = .white
@@ -77,25 +78,6 @@ class TeamProfileView: UIView {
          return label
      }()
     
-    private let homeStadiumLabel: UILabel = {
-        let label = UILabel()
-         label.text = "HOME STADIUM"
-         label.backgroundColor = .clear
-         label.numberOfLines = 0
-         label.textColor = Resources.Colors.grayColor
-         label.font = UIFont.systemFont(ofSize: 16)
-         return label
-     }()
-    
-    let stadium: UILabel = {
-        let label = UILabel()
-         label.text = "Sport Palace 'Megasport'"
-         label.backgroundColor = .clear
-         label.numberOfLines = 0
-        label.textColor = .white
-         label.font = UIFont.systemFont(ofSize: 16)
-         return label
-     }()
     
     private let separatorLine: UIView = {
         let view = UIView()
@@ -105,10 +87,12 @@ class TeamProfileView: UIView {
     
     let playersCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 10
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 28, height: 71)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
@@ -195,8 +179,6 @@ class TeamProfileView: UIView {
         addSubview(teamSeason)
         addSubview(trainerLabel)
         addSubview(trainer)
-        addSubview(homeStadiumLabel)
-        addSubview(stadium)
         
         
         addSubview(separatorLine)
@@ -233,6 +215,7 @@ class TeamProfileView: UIView {
         teamNameLabel.snp.makeConstraints { make in
             make.centerX.equalTo(teamLogo.snp.centerX)
             make.top.equalTo(teamLogo.snp.bottom).offset(16)
+            make.width.equalTo(150)
         }
         
         teamSeasonLabel.snp.makeConstraints { make in
@@ -259,17 +242,6 @@ class TeamProfileView: UIView {
             make.trailing.equalToSuperview().offset(-35)
         }
         
-        homeStadiumLabel.snp.makeConstraints { make in
-            make.top.equalTo(trainer.snp.bottom).offset(17)
-            make.leading.equalTo(teamLogo.snp.trailing).offset(24)
-            make.trailing.equalToSuperview().offset(-35)
-        }
-        
-        stadium.snp.makeConstraints { make in
-            make.top.equalTo(homeStadiumLabel.snp.bottom)
-            make.leading.equalTo(teamLogo.snp.trailing).offset(24)
-            make.trailing.equalToSuperview().offset(-35)
-        }
         
         separatorLine.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(48)

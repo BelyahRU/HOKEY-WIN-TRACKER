@@ -7,6 +7,7 @@ extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func setupCollectionView() {
         tableView.teamsCollectionView.dataSource = self
         tableView.teamsCollectionView.delegate = self
+        tableView.teamsCollectionView.showsVerticalScrollIndicator = false
         tableView.teamsCollectionView.register(TeamCell.self, forCellWithReuseIdentifier: TeamCell.identifier)
         tableView.teamsCollectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.identifier)
                 

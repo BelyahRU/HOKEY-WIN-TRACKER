@@ -13,72 +13,93 @@ class PlayerCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let playerLogoImageView: UIImageView = {
-        let im = UIImageView()
-        im.image = UIImage(named: "midak")
-        im.contentMode = .scaleAspectFit
-        im.layer.cornerRadius = im.frame.size.width / 2
-        im.layer.masksToBounds = true
-        return im
-    }()
-    
-    
     let playerNameLabel: UILabel = {
        let label = UILabel()
         label.text = "Midlak Egor"
         label.backgroundColor = .clear
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
     }()
     
-    private let goalsScoredImage: UIImageView = {
-        let im = UIImageView()
-        im.image = UIImage(named: Resources.Icons.goalsIcon)?.withTintColor(.white.withAlphaComponent(0.5))
-        im.contentMode = .scaleAspectFit
-        return im
-    }()
-    
-    private let goalScoredLabel: UILabel = {
-       let label = UILabel()
-        label.text = "GOALS SCORED:"
-        label.backgroundColor = .clear
-        label.textColor = .white.withAlphaComponent(0.5)
-        label.font = UIFont.systemFont(ofSize: 14)
-        return label
-    }()
-    
-    private let assistScoredImage: UIImageView = {
-        let im = UIImageView()
-        im.image = UIImage(named: Resources.Icons.assistIcon)?.withTintColor(.white.withAlphaComponent(0.5))
-        im.contentMode = .scaleAspectFit
-        return im
-    }()
-    
-    private let assistScoredLabel: UILabel = {
-       let label = UILabel()
-        label.text = "ASSIST SCORED:"
-        label.backgroundColor = .clear
-        label.textColor = .white.withAlphaComponent(0.5)
-        label.font = UIFont.systemFont(ofSize: 14)
-        return label
-    }()
-    
-    let totalGoals: UILabel = {
+    let positionLabel: UILabel = {
         let label = UILabel()
-         label.text = "4"
+         label.text = "FORWARD- 11"
          label.backgroundColor = .clear
-         label.textColor = .white
-         label.font = UIFont.systemFont(ofSize: 18)
+         label.textColor = Resources.Colors.lightBlueColor
+         label.font = UIFont.systemFont(ofSize: 14)
          return label
     }()
     
-    let totalAssists: UILabel = {
+    let dateBirthLabel: UILabel = {
         let label = UILabel()
-         label.text = "16"
+         label.text = "Date of birth-"
+         label.backgroundColor = .clear
+         label.textColor = .gray
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+    }()
+    
+    let dateBirth: UILabel = {
+        let label = UILabel()
+         label.text = "1993-03-28"
          label.backgroundColor = .clear
          label.textColor = .white
-         label.font = UIFont.systemFont(ofSize: 18)
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+    }()
+    
+    let heightLabel: UILabel = {
+        let label = UILabel()
+         label.text = "Height-"
+         label.backgroundColor = .clear
+         label.textColor = .gray
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+    }()
+    
+    let weightLabel: UILabel = {
+        let label = UILabel()
+         label.text = "Weight-"
+         label.backgroundColor = .clear
+         label.textColor = .gray
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+    }()
+    
+    let membersinceLabel: UILabel = {
+        let label = UILabel()
+         label.text = "Membersince-"
+         label.backgroundColor = .clear
+         label.textColor = .gray
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+    }()
+    
+    let height: UILabel = {
+        let label = UILabel()
+         label.text = "190"
+         label.backgroundColor = .clear
+         label.textColor = .white
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+    }()
+    
+    let weight: UILabel = {
+        let label = UILabel()
+         label.text = "82"
+         label.backgroundColor = .clear
+         label.textColor = .white
+         label.font = UIFont.systemFont(ofSize: 12)
+         return label
+    }()
+    
+    let membersince: UILabel = {
+        let label = UILabel()
+         label.text = "1993-03-28"
+         label.backgroundColor = .clear
+         label.textColor = .white
+         label.font = UIFont.systemFont(ofSize: 12)
          return label
     }()
     
@@ -92,7 +113,6 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     }
     
     private func configure() {
-        setupUI()
         setupSubviews()
         setupConstraints()
     }
@@ -101,20 +121,20 @@ class PlayerCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
     }
     
-    private func setupUI() {
-        
-    }
     
     private func setupSubviews() {
         addSubview(backgroundRoundedView)
-        addSubview(playerLogoImageView)
         addSubview(playerNameLabel)
-        addSubview(goalsScoredImage)
-        addSubview(goalScoredLabel)
-        addSubview(assistScoredImage)
-        addSubview(assistScoredLabel)
-        addSubview(totalGoals)
-        addSubview(totalAssists)
+        addSubview(positionLabel)
+        addSubview(dateBirthLabel)
+        addSubview(dateBirth)
+        addSubview(heightLabel)
+        addSubview(weightLabel)
+        addSubview(membersinceLabel)
+        
+        addSubview(height)
+        addSubview(weight)
+        addSubview(membersince)
     }
     
     private func setupConstraints() {
@@ -122,50 +142,66 @@ class PlayerCollectionViewCell: UICollectionViewCell {
             make.edges.equalToSuperview()
         }
         
-        playerLogoImageView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.size.equalTo(51)
-            make.leading.equalToSuperview().offset(14)
-        }
-        
         playerNameLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(33)
+            make.top.equalToSuperview().offset(5)
+            
+        }
+        
+        positionLabel.snp.makeConstraints { make in
+            make.top.equalTo(playerNameLabel.snp.bottom).offset(2)
+            make.leading.equalTo(playerNameLabel.snp.leading)
+        }
+        
+        dateBirthLabel.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-5)
+            make.leading.equalTo(playerNameLabel.snp.leading)
+        }
+        
+        dateBirth.snp.makeConstraints { make in
+            make.centerY.equalTo(dateBirthLabel.snp.centerY)
+            make.leading.equalTo(dateBirthLabel.snp.trailing)
+        }
+        
+        heightLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(self.bounds.width / 2 + 30)
+            make.top.equalToSuperview().offset(11)
+        }
+        
+        weightLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(self.bounds.width / 2 + 30)
             make.centerY.equalToSuperview()
-            make.leading.equalTo(playerLogoImageView.snp.trailing).offset(10)
-            make.width.equalTo(93)
         }
         
-        goalsScoredImage.snp.makeConstraints { make in
-            make.size.equalTo(16)
-            make.top.equalToSuperview().offset(14)
-            make.leading.equalTo(playerNameLabel.snp.trailing)
+        membersinceLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(self.bounds.width / 2 + 30)
+            make.bottom.equalToSuperview().offset(-11)
         }
         
-        goalScoredLabel.snp.makeConstraints { make in
-            make.leading.equalTo(goalsScoredImage.snp.trailing).offset(8)
-            make.centerY.equalTo(goalsScoredImage.snp.centerY)
+        height.snp.makeConstraints { make in
+            make.centerY.equalTo(heightLabel.snp.centerY)
+            make.leading.equalTo(heightLabel.snp.trailing)
         }
         
-        totalGoals.snp.makeConstraints { make in
-            make.centerY.equalTo(goalsScoredImage.snp.centerY)
-            make.trailing.equalToSuperview().offset(-24)
+        weight.snp.makeConstraints { make in
+            make.centerY.equalTo(weightLabel.snp.centerY)
+            make.leading.equalTo(weightLabel.snp.trailing)
         }
         
-        assistScoredImage.snp.makeConstraints { make in
-            make.size.equalTo(16)
-            make.bottom.equalToSuperview().offset(-14)
-            make.leading.equalTo(playerNameLabel.snp.trailing)
+        membersince.snp.makeConstraints { make in
+            make.centerY.equalTo(membersinceLabel.snp.centerY)
+            make.leading.equalTo(membersinceLabel.snp.trailing)
         }
         
-        assistScoredLabel.snp.makeConstraints { make in
-            make.leading.equalTo(assistScoredImage.snp.trailing).offset(8)
-            make.centerY.equalTo(assistScoredImage.snp.centerY)
-        }
-        
-        totalAssists.snp.makeConstraints { make in
-            make.centerY.equalTo(assistScoredImage.snp.centerY)
-            make.centerX.equalTo(totalGoals.snp.centerX)
-        }
-        
+    }
+    
+    func setupCell(_ player: Player) {
+        height.text = player.height ?? ""
+        weight.text = player.weight ?? ""
+        membersince.text = DateHelper.formatMembersinceDate(from: player.membersince ?? "") ?? ""
+        dateBirth.text = player.birthdate ?? ""
+        positionLabel.text = "\(player.position ?? "")- \(player.shirtnumber ?? "")"
+        playerNameLabel.text = player.name
     }
         
 }

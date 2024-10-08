@@ -13,6 +13,7 @@
 		1AC8B58D2CB59CDE00D683CD /* TeamProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B58C2CB59CDE00D683CD /* TeamProfileViewModel.swift */; };
 		1AC8B58F2CB59E0200D683CD /* TeamRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B58E2CB59E0200D683CD /* TeamRoster.swift */; };
 		1AC8B5932CB5AAB700D683CD /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B5922CB5AAB700D683CD /* NewsViewModel.swift */; };
+		1AC8B5952CB5D0D800D683CD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B5942CB5D0D700D683CD /* LoadingView.swift */; };
 		1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */; };
 		1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */; };
 		1ACA93612CB0A97F00F4B103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA93602CB0A97F00F4B103 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		1AC8B58C2CB59CDE00D683CD /* TeamProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileViewModel.swift; sourceTree = "<group>"; };
 		1AC8B58E2CB59E0200D683CD /* TeamRoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRoster.swift; sourceTree = "<group>"; };
 		1AC8B5922CB5AAB700D683CD /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		1AC8B5942CB5D0D700D683CD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1ACA93542CB0A97D00F4B103 /* HOKEY WIN TRACKER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HOKEY WIN TRACKER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		1ACA93962CB0BC9F00F4B103 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1AC8B5942CB5D0D700D683CD /* LoadingView.swift */,
 				1ACA93972CB0BCA700F4B103 /* HomeView.swift */,
 				1ACA93BB2CB1B2E000F4B103 /* FilterView.swift */,
 			);
@@ -487,6 +490,7 @@
 				1AC8B58D2CB59CDE00D683CD /* TeamProfileViewModel.swift in Sources */,
 				1ACA93742CB0AAF900F4B103 /* MainTabBarCoordinator.swift in Sources */,
 				1AC8B5892CB576C000D683CD /* TopPlayer.swift in Sources */,
+				1AC8B5952CB5D0D800D683CD /* LoadingView.swift in Sources */,
 				1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */,
 				1AC8B5932CB5AAB700D683CD /* NewsViewModel.swift in Sources */,
 				1AE987752CB4AF3E00255BB6 /* LeagueInfo.swift in Sources */,

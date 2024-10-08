@@ -35,7 +35,7 @@ class TeamProfileViewModel {
     }
     
     func getPlayer(by id: Int) -> Player? {
-        if id > 0 && id < teamRoster.count {
+        if id >= 0 && id < teamRoster.count {
             return teamRoster[id]
         }
         return nil

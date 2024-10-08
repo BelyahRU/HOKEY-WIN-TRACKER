@@ -23,4 +23,8 @@ class StatisticsCoordinator: Coordinator {
         navigationController.pushViewController(statisticsVC, animated: true)
     }
     
+    func showError() {
+        parentCoordinator?.showError()
+    }
+    
 }

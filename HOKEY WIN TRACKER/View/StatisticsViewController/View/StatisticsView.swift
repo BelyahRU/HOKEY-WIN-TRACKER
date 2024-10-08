@@ -33,6 +33,7 @@ class StatisticsView: UIView {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
+        
         return collectionView
     }()
 

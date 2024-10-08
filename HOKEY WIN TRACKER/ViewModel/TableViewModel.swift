@@ -29,6 +29,9 @@ class TableViewModel {
             }
         } else {
             //ERROR
+            DispatchQueue.main.async {
+                self.delegate?.showError()
+            }
         }
     }
     

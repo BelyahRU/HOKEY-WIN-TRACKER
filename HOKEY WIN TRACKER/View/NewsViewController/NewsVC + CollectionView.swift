@@ -8,6 +8,7 @@ extension NewsViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func setupCollectionView() {
         newsView.newsCollectionView.delegate = self
         newsView.newsCollectionView.dataSource = self
+        newsView.newsCollectionView.showsVerticalScrollIndicator = false
         
         newsView.newsCollectionView.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: NewsCollectionViewCell.reuseId)
     }

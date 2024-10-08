@@ -20,6 +20,7 @@ class TableView: UIView {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 13, right: 0)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 28, height: 68)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
 

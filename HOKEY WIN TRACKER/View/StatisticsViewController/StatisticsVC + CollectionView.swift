@@ -7,6 +7,7 @@ extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDa
     func setupCollectionView() {
         statisticsView.top10PlayersCollectionView.dataSource = self
         statisticsView.top10PlayersCollectionView.delegate = self
+        statisticsView.top10PlayersCollectionView.showsVerticalScrollIndicator = false
         statisticsView.top10PlayersCollectionView.register(StatisticsCollectionViewCell.self, forCellWithReuseIdentifier: StatisticsCollectionViewCell.reuseId)
     }
     

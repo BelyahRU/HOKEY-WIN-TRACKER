@@ -51,5 +51,6 @@ class StatisticsViewController: UIViewController, StatisticsViewControllerDelega
     
     func showError() {
         //error
+        coordinator?.showError()
     }
 }

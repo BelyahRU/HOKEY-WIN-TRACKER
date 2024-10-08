@@ -20,6 +20,15 @@ class DateHelper {
         return dateFormatter.string(from: date)
     }
     
+    static func formatMembersinceDate(from timestamp: String) -> String? {
+        guard let timeInterval = TimeInterval(timestamp) else { return nil }
+        
+        let date = Date(timeIntervalSince1970: timeInterval)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
     static func formatUnixTime(_ unixTime: String) -> String? {
         guard let timeInterval = Double(unixTime) else {
             return nil

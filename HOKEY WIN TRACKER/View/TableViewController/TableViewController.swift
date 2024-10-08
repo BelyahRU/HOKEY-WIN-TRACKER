@@ -53,6 +53,7 @@ class TableViewController: UIViewController, TableVCDelegate {
     
     func showError() {
         //error
+        coordinator?.showError()
     }
     
 

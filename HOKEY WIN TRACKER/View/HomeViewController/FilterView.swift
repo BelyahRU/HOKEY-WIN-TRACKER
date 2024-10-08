@@ -6,6 +6,7 @@ class FilterView: UIView {
     public let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Filter Options"
+        label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
@@ -25,6 +26,8 @@ class FilterView: UIView {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .wheels
+        datePicker.tintColor = .white
+        datePicker.overrideUserInterfaceStyle = .light
         return datePicker
     }()
     
@@ -33,6 +36,8 @@ class FilterView: UIView {
         textField.placeholder = "Enter team name"
         textField.borderStyle = .roundedRect
         textField.backgroundColor = Resources.Colors.cellsColor
+        textField.textColor = .white
+        textField.tintColor = .white
         return textField
     }()
     

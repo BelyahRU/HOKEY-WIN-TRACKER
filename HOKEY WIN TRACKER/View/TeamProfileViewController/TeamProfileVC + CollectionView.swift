@@ -13,14 +13,17 @@ extension TeamProfileViewController:UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        viewModel.getCountPlayers()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlayerCollectionViewCell.reuseId, for: indexPath) as? PlayerCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
+        guard let player = viewModel.getPlayer(by: indexPath.row) else {
+            return cell
+        }
+        cell.setupCell(player)
         return cell
     }
     

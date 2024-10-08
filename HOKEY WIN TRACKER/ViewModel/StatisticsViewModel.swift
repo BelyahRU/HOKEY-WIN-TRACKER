@@ -23,23 +23,15 @@ class StatisticsViewModel {
     
     public func delegate(isTableLoaded: Bool) {
         if isTableLoaded {
+            //SHOW
             DispatchQueue.main.async {
                 self.delegate?.showUI()
             }
-            //SHOW
-//            if counter == 2 {
-//                DispatchQueue.main.async {
-//                    self.delegate?.showUI()
-//                }
-//            }
         } else {
             //ERROR
-//            if !isError {
-//                self.isError = true
-//                DispatchQueue.main.async {
-//                    self.delegate?.showError()
-//                }
-//            }
+            DispatchQueue.main.async {
+                self.delegate?.showError()
+            }
         }
     }
     

@@ -43,11 +43,20 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     
     private func setupConstraints() {
-        customTabBarView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.height.equalTo(100)
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview()
+        if view.bounds.height < 800 {
+            customTabBarView.snp.makeConstraints { make in
+                make.height.equalTo(60)
+                make.width.equalToSuperview()
+                make.centerX.equalToSuperview()
+                make.bottom.equalToSuperview()
+            }
+        } else {
+            customTabBarView.snp.makeConstraints { make in
+                make.height.equalTo(100)
+                make.width.equalToSuperview()
+                make.centerX.equalToSuperview()
+                make.bottom.equalToSuperview()
+            }
         }
     }
     

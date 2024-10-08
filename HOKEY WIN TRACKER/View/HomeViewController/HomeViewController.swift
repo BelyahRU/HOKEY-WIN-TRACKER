@@ -18,6 +18,8 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
     var isFilterActive = false
 
     var errorVC = ErrorViewController()
+    
+    let loadingView = LoadingView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +29,16 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
     }
     
     private func setupViewModel() {
-        activityIndicator = UIActivityIndicatorView()
-        view.addSubview(activityIndicator)
-        activityIndicator.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
+        setupLoadingView()
         viewModel = HomeViewModel()
         viewModel.delegate = self
+    }
+    
+    func setupLoadingView() {
+        view.addSubview(loadingView)
+        loadingView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
     @objc private func handleCellExpansion(_ notification: Notification) {
@@ -72,9 +75,9 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
     }
 
     func showUI() {
+        loadingView.removeFromSuperview()
         cellHeights = Array(repeating: false, count: viewModel.getCountEndedItems())
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
+        
         configure()
     }
     

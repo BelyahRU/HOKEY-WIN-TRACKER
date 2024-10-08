@@ -23,4 +23,8 @@ class TableCoordinator: Coordinator {
         navigationController.pushViewController(tableVC, animated: true)
     }
     
+    func showError() {
+        parentCoordinator?.showError()
+    }
+    
 }
