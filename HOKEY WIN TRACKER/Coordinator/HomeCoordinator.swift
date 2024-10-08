@@ -27,4 +27,11 @@ class HomeCoordinator: Coordinator {
         parentCoordinator?.showError()
     }
     
+    func showTabBar() {
+        parentCoordinator?.showTabBar()
+    }
+    
+    func dismissTabBar() {
+        parentCoordinator?.dismissTabBar()
+    }
 }

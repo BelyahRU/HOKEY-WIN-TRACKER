@@ -73,6 +73,15 @@ class MainTabBarCoordinator: Coordinator {
         mainTabBarController.tabBar.isHidden = true
         navigationController.pushViewController(errorVC, animated: true)
     }
+    
+    func showTabBar() {
+        mainTabBarController.tabBar.isHidden = false
+    }
+    
+    func dismissTabBar() {
+        mainTabBarController.tabBar.isHidden = true
+    }
+    
     public func generateNavController(for navController: UINavigationController, title: String, image: UIImage?) -> UINavigationController {
         
         navController.tabBarItem.title = title

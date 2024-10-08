@@ -97,7 +97,7 @@ class HomeViewModel {
         if let date = date {
             let calendar = Calendar.current
             let startOfDay = calendar.startOfDay(for: date)
-            let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+            let _ = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
             
             filtredUpcomingMatches = filtredUpcomingMatches.filter { match in
                 let matchDate = Date(timeIntervalSince1970: Double(match.time) ?? 0)

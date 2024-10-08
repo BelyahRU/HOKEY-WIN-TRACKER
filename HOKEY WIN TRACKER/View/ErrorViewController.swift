@@ -6,7 +6,6 @@ class ErrorViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Try again", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -25,6 +24,7 @@ class ErrorViewController: UIViewController {
         view.backgroundColor = Resources.Colors.blueColor
         view.addSubview(textLabel)
         view.addSubview(retryButton)
+        retryButton.addTarget(self, action: #selector(retryButtonTapped), for: .touchUpInside)
         setupConstraints()
     }
     

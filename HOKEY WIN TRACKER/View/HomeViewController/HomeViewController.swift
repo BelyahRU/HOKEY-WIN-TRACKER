@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
     }
     
     func setupLoadingView() {
+        coordinator?.dismissTabBar()
         view.addSubview(loadingView)
         loadingView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -75,6 +76,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate, HomeVie
     }
 
     func showUI() {
+        coordinator?.showTabBar()
         loadingView.removeFromSuperview()
         cellHeights = Array(repeating: false, count: viewModel.getCountEndedItems())
         
