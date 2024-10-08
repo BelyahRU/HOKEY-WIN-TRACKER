@@ -23,11 +23,13 @@ class APICaller {
 
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
+                print(error)
                 completion(.failure(.serverError(error.localizedDescription)))
                 return
             }
 
             guard let data = data else {
+                print("no data")
                 completion(.failure(.noData))
                 return
             }
@@ -37,6 +39,7 @@ class APICaller {
                 let response = try decoder.decode(responseType, from: data)
                 completion(.success(response))
             } catch {
+                print(error)
                 completion(.failure(.decodingFailed(error)))
             }
         }

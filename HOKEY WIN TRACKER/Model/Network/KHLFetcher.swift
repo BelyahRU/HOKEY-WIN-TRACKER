@@ -82,9 +82,13 @@ class KHLFetcher {
             apiCaller.performRequest(urlString: urlString, responseType: EndedMatchesResponse.self) { result in
                 switch result {
                 case .success(let matchesResponse):
-                    var sortedMatches = matchesResponse.results.sorted { match1, match2 in
+                    var sortedMatches = matchesResponse.results?.sorted { match1, match2 in
                         guard let time1 = Double(match1.time), let time2 = Double(match2.time) else { return false }
                         return time1 > time2
+                    }
+                    
+                    guard var sortedMatches = sortedMatches else {
+                        return
                     }
                     
                     let dispatchGroup = DispatchGroup()
@@ -177,13 +181,47 @@ class KHLFetcher {
         }
     }
     
-    func loadImage(for teamID: String, completion: @escaping (Result<Data, APIError>) -> Void) {
+    func getTop10KHLPlayers(completion: @escaping (Result<[TopPlayer], APIError>) -> Void) {
+        let urlString = "https://api.b365api.com/v1/league/toplist?token=\(NetworkConstants.token)&league_id=\(league_id)"
+        
+        // Выполнение запроса
+        apiCaller.performRequest(urlString: urlString, responseType: TopListResponse.self) { result in
+            switch result {
+            case .success(let topListResponse):
+                var top10Players = Array(topListResponse.results.topgoals.prefix(10))
+                
+                let dispatchGroup = DispatchGroup()
+                for i in 0..<top10Players.count {
+                    let teamImageID = top10Players[i].team.image_id
+                    
+                    dispatchGroup.enter()
+                    self.loadImage(for: teamImageID, size: "l") { result in
+                        switch result {
+                        case .success(let imageData):
+                            top10Players[i].teamImage = imageData
+                        case .failure(let error):
+                            print("Не удалось загрузить изображение для команды \(teamImageID): \(error)")
+                        }
+                        dispatchGroup.leave()
+                    }
+                }
+                
+                dispatchGroup.notify(queue: .main) {
+                    completion(.success(top10Players))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
     
-        guard let imageURL = URL(string: "https://assets.b365api.com/images/team/m/\(teamID).png") else {
+    func loadImage(for teamID: String, size: String = "m", completion: @escaping (Result<Data, APIError>) -> Void) {
+        print()
+        guard let imageURL = URL(string: "https://assets.b365api.com/images/team/l/\(teamID).png") else {
             completion(.failure(.invalidURL))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: imageURL) { data, response, error in
             if let error = error {
                 completion(.failure(.serverError(error.localizedDescription)))

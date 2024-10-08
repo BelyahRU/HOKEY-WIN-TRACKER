@@ -23,6 +23,7 @@ class HomeViewModel {
                 self.counter += 1
                 self.delegate(isTableLoaded: true)
             case .failure:
+                print("failure 1")
                 self.delegate(isTableLoaded: false)
             }
         }
@@ -34,6 +35,7 @@ class HomeViewModel {
                 self.endedMatches = endedMatches
                 self.delegate(isTableLoaded: true)
             case .failure:
+                print("failure 2")
                 self.delegate(isTableLoaded: false)
             }
         }

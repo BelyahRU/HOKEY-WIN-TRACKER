@@ -18,6 +18,10 @@ extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StatisticsCollectionViewCell.reuseId, for: indexPath) as? StatisticsCollectionViewCell else {
             return UICollectionViewCell()
         }
+        guard let player = viewModel.getPlayer(by: indexPath.row) else {
+            return cell
+        }
+        cell.setupCell(player: player)
         
         return cell
     }

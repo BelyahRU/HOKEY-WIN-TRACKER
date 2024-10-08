@@ -8,6 +8,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         homeView.upcomingCollectionView.delegate = self
         homeView.upcomingCollectionView.dataSource = self
         homeView.upcomingCollectionView.showsHorizontalScrollIndicator = false
+        homeView.upcomingCollectionView.showsVerticalScrollIndicator = false
         homeView.upcomingCollectionView.register(UpcomingCollectionViewCell.self, forCellWithReuseIdentifier: UpcomingCollectionViewCell.reuseId)
     }
     
@@ -15,6 +16,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         homeView.completedCollectionView.delegate = self
         homeView.completedCollectionView.dataSource = self
         homeView.completedCollectionView.showsHorizontalScrollIndicator = false
+        homeView.completedCollectionView.showsVerticalScrollIndicator = false
         homeView.completedCollectionView.register(CompletedCollectionViewCell.self, forCellWithReuseIdentifier: CompletedCollectionViewCell.reuseId)
     }
     

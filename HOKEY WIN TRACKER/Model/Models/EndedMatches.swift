@@ -19,7 +19,7 @@ struct EndedMatch: Codable {
 struct EndedMatchesResponse: Codable {
     let success: Int
     let pager: Pager
-    let results: [EndedMatch]
+    let results: [EndedMatch]?
 }
 
 struct Score: Codable {

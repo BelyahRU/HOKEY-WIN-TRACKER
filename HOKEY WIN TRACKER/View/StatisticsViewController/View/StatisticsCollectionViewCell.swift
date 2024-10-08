@@ -15,19 +15,21 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
     
     let teamImageView: UIImageView = {
         let im = UIImageView()
-        im.image = UIImage(named: "skaLogo")
         im.contentMode = .scaleAspectFit
         return im
     }()
     
-    let playerLogoImageView: UIImageView = {
-        let im = UIImageView()
-        im.image = UIImage(named: "midak")
-        im.contentMode = .scaleAspectFit
-        im.layer.cornerRadius = im.frame.size.width / 2
-        im.layer.masksToBounds = true
-        return im
+    let teamNameLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Spartak"
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 16)
+        return label
     }()
+    
     
     
     let playerNameLabel: UILabel = {
@@ -35,7 +37,7 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
         label.text = "Midlak Egor"
         label.backgroundColor = .clear
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         return label
     }()
     
@@ -55,16 +57,16 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let assistScoredImage: UIImageView = {
+    private let penaltyScoredImage: UIImageView = {
         let im = UIImageView()
         im.image = UIImage(named: Resources.Icons.assistIcon)
         im.contentMode = .scaleAspectFit
         return im
     }()
     
-    private let assistScoredLabel: UILabel = {
+    private let penaltyScoredLabel: UILabel = {
        let label = UILabel()
-        label.text = "ASSIST SCORED:"
+        label.text = "PENALTY SCORED:"
         label.backgroundColor = .clear
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 14)
@@ -96,7 +98,7 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
          return label
     }()
     
-    let totalAssists: UILabel = {
+    let totalPenalties: UILabel = {
         let label = UILabel()
          label.text = "16"
          label.backgroundColor = .clear
@@ -136,17 +138,17 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
     private func setupSubviews() {
         addSubview(backgroundRoundedView)
         addSubview(teamImageView)
-        addSubview(playerLogoImageView)
         addSubview(playerNameLabel)
         addSubview(goalsScoredImage)
         addSubview(goalScoredLabel)
-        addSubview(assistScoredImage)
-        addSubview(assistScoredLabel)
+        addSubview(penaltyScoredImage)
+        addSubview(penaltyScoredLabel)
         addSubview(totalPointsImage)
         addSubview(totalPointsLabel)
         addSubview(totalGoals)
-        addSubview(totalAssists)
+        addSubview(totalPenalties)
         addSubview(totalPoints)
+        addSubview(teamNameLabel)
     }
     
     private func setupConstraints() {
@@ -154,27 +156,22 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
             make.edges.equalToSuperview()
         }
         
-        teamImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.trailing.equalTo(contentView.snp.leading).offset(150)
-            make.width.equalTo(200)
-        }
-        
-        playerLogoImageView.snp.makeConstraints { make in
-            make.leading.equalTo(teamImageView.snp.trailing).offset(14)
-            make.size.equalTo(42)
-            make.top.equalToSuperview().offset(5)
-        }
-        
         playerNameLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(playerLogoImageView.snp.centerY)
-            make.leading.equalTo(playerLogoImageView.snp.trailing).offset(10)
+            make.top.equalToSuperview().offset(12)
+            make.leading.equalToSuperview().offset(19)
         }
+        
+        teamImageView.snp.makeConstraints { make in
+            make.top.equalTo(playerNameLabel.snp.bottom).offset(7)
+            make.leading.equalTo(playerNameLabel.snp.leading)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+        }
+        
         
         goalsScoredImage.snp.makeConstraints { make in
-            make.top.equalTo(playerLogoImageView.snp.bottom).offset(10)
-            make.leading.equalTo(playerLogoImageView.snp.leading).offset(10)
+            make.top.equalToSuperview().offset(12)
+            make.leading.equalToSuperview().offset(self.bounds.width/2)
             make.size.equalTo(16)
         }
         
@@ -188,25 +185,25 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
             make.leading.equalTo(goalScoredLabel.snp.trailing).offset(20)
         }
         
-        assistScoredImage.snp.makeConstraints { make in
-            make.top.equalTo(goalsScoredImage.snp.bottom).offset(18)
+        penaltyScoredImage.snp.makeConstraints { make in
+            make.top.equalTo(goalsScoredImage.snp.bottom).offset(10)
             make.leading.equalTo(goalsScoredImage.snp.leading)
             make.size.equalTo(16)
         }
         
-        assistScoredLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(assistScoredImage.snp.centerY)
-            make.leading.equalTo(assistScoredImage.snp.trailing).offset(8)
+        penaltyScoredLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(penaltyScoredImage.snp.centerY)
+            make.leading.equalTo(penaltyScoredImage.snp.trailing).offset(8)
         }
         
-        totalAssists.snp.makeConstraints { make in
-            make.centerY.equalTo(assistScoredImage.snp.centerY)
+        totalPenalties.snp.makeConstraints { make in
+            make.centerY.equalTo(penaltyScoredImage.snp.centerY)
             make.centerX.equalTo(totalGoals.snp.centerX)
         }
         
         totalPointsImage.snp.makeConstraints { make in
-            make.top.equalTo(assistScoredImage.snp.bottom).offset(18)
-            make.leading.equalTo(assistScoredImage.snp.leading)
+            make.top.equalTo(penaltyScoredImage.snp.bottom).offset(10)
+            make.leading.equalTo(penaltyScoredImage.snp.leading)
             make.size.equalTo(16)
         }
         
@@ -219,5 +216,21 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
             make.centerY.equalTo(totalPointsImage.snp.centerY)
             make.centerX.equalTo(totalGoals.snp.centerX)
         }
+        
+        teamNameLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(teamImageView.snp.centerY)
+            make.leading.equalTo(teamImageView.snp.trailing).offset(5)
+            make.width.equalTo(90)
+        }
+    }
+    
+    func setupCell(player: TopPlayer) {
+        playerNameLabel.text = player.player.name
+        totalPenalties.text = player.penalties
+        totalGoals.text = player.goals
+        totalPoints.text = player.goal_points
+        
+        teamImageView.image = UIImage(data: player.teamImage ?? Data())
+        teamNameLabel.text = player.team.name
     }
 }
