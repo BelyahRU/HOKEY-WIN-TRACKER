@@ -50,6 +50,8 @@ extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = TeamProfileViewController()
+        let team = viewModel.getTeam(by: indexPath.row)
+        vc.setupTeam(team)
         navigationController?.pushViewController(vc, animated: false)
     }
 }

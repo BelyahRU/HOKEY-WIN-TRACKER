@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "olimpijskij-chempion-nazval-prichiny-vratarskih-problem-klubov-khl_1728372179917685907.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "olimpijskij-chempion-nazval-prichiny-vratarskih-problem-klubov-khl_1728372179917685907-2.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "olimpijskij-chempion-nazval-prichiny-vratarskih-problem-klubov-khl_1728372179917685907-3.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

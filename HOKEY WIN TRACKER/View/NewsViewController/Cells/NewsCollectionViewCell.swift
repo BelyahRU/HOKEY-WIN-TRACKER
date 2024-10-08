@@ -8,7 +8,6 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let im = UIImageView()
-        im.image = UIImage(named: "newsPhoto")
         im.contentMode = .scaleAspectFit
         return im
     }()
@@ -16,29 +15,24 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     let newsTitleLabel: UILabel = {
        let label = UILabel()
-        label.text = "News Title"
         label.backgroundColor = .clear
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 24)
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     let infoLabel: UILabel = {
        let label = UILabel()
-        label.text = "News text will be here news text will be here news text will be here news text will be here news text will be here"
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = Resources.Colors.lightBlueColor
         label.numberOfLines = 0
         label.backgroundColor = .clear
         return label
     }()
     
-    let shareButton: UIButton = {
-       let button = UIButton()
-        button.setImage(UIImage(named: Resources.Buttons.shareButton), for: .normal)
-        return button
-    }()
+    
     
     private let separatorLineView: UIView = {
         let view = UIView()
@@ -69,7 +63,6 @@ class NewsCollectionViewCell: UICollectionViewCell {
         addSubview(imageView)
         addSubview(newsTitleLabel)
         addSubview(infoLabel)
-        addSubview(shareButton)
         addSubview(separatorLineView)
     }
     
@@ -79,20 +72,15 @@ class NewsCollectionViewCell: UICollectionViewCell {
             make.width.equalTo(140)
         }
         
-        shareButton.snp.makeConstraints { make in
-            make.size.equalTo(21)
-            make.top.trailing.equalToSuperview()
-        }
-        
         newsTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(-3)
             make.leading.equalTo(imageView.snp.trailing).offset(16)
-            make.trailing.equalTo(shareButton.snp.leading).offset(-10)
+            make.trailing.equalToSuperview().offset(-5)
         }
         
         infoLabel.snp.makeConstraints { make in
             make.leading.equalTo(newsTitleLabel.snp.leading)
-            make.top.equalTo(newsTitleLabel.snp.bottom).offset(6)
+            make.top.equalTo(newsTitleLabel.snp.bottom).offset(3)
             make.bottom.equalToSuperview()
             make.trailing.equalToSuperview().offset(-5)
         }
@@ -103,5 +91,12 @@ class NewsCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(1.3)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    func setupCell(_ news: NewsModel) {
+        print(news)
+        imageView.image = UIImage(named: news.imageName)
+        newsTitleLabel.text = news.title
+        infoLabel.text = news.text
     }
 }

@@ -6,6 +6,8 @@ class NewsViewController: UIViewController {
     weak var coordinator: NewsCoordinator?
     
     public var newsView = NewsView()
+    
+    var viewModel = NewsViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

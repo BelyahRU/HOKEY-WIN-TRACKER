@@ -10,7 +10,7 @@ struct EndedMatch: Codable {
     let home: TeamInfo
     let away: TeamInfo
     let ss: String?
-    let scores: [String: Score]
+    let scores: [String: Score]?
     var firstTeamImage: Data?
     var secondTeamImage: Data?
     var stadiumName: String?

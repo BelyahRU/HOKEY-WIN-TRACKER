@@ -82,12 +82,13 @@ class KHLFetcher {
             apiCaller.performRequest(urlString: urlString, responseType: EndedMatchesResponse.self) { result in
                 switch result {
                 case .success(let matchesResponse):
-                    var sortedMatches = matchesResponse.results?.sorted { match1, match2 in
+                    let sortedMatches = matchesResponse.results?.sorted { match1, match2 in
                         guard let time1 = Double(match1.time), let time2 = Double(match2.time) else { return false }
                         return time1 > time2
                     }
                     
                     guard var sortedMatches = sortedMatches else {
+                        print("error sorted")
                         return
                     }
                     
@@ -150,7 +151,6 @@ class KHLFetcher {
                     completion(.failure(.noData))
                     return
                 }
-                
                 let filteredTables = tables.filter { $0.groupname == nil }
                 var rows = filteredTables.compactMap { $0.rows }.flatMap { $0 }
 
@@ -209,6 +209,40 @@ class KHLFetcher {
                 dispatchGroup.notify(queue: .main) {
                     completion(.success(top10Players))
                 }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getTeamRoster(for teamId: String, completion: @escaping (Result<[Player], APIError>) -> Void) {
+        let urlString = "https://api.b365api.com/v1/team/squad?token=\(NetworkConstants.token)&team_id=\(teamId)"
+        
+        apiCaller.performRequest(urlString: urlString, responseType: TeamRosterResponse.self) { result in
+            switch result {
+            case .success(let playersResponse):
+                guard let players = playersResponse.results else {
+                    completion(.failure(.noData))
+                    return
+                }
+                
+                //adding home stadium
+//                let dispatchGroup = DispatchGroup()
+//                for i in 0..<players.count {
+//                    dispatchGroup.enter()
+//                    self.loadStadiumName(for: event_id) { result in
+//                        switch result {
+//                        case .success(let stadiumName):
+//                            sortedMatches[i].stadiumName = stadiumName
+//                        case .failure(let error):
+//                            print("Не удалось загрузить название стадиона для события \(event_id): \(error)")
+//                        }
+//                        dispatchGroup.leave()
+//                    }
+//                }
+                // Загрузка названия стадиона по event_id
+                
+                completion(.success(players))
             case .failure(let error):
                 completion(.failure(error))
             }

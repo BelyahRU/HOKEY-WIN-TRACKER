@@ -10,6 +10,9 @@
 		1AC8B5862CB55AD800D683CD /* StadiumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B5852CB55AD800D683CD /* StadiumResponse.swift */; };
 		1AC8B5892CB576C000D683CD /* TopPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B5882CB576C000D683CD /* TopPlayer.swift */; };
 		1AC8B58B2CB577EE00D683CD /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B58A2CB577EE00D683CD /* StatisticsViewModel.swift */; };
+		1AC8B58D2CB59CDE00D683CD /* TeamProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B58C2CB59CDE00D683CD /* TeamProfileViewModel.swift */; };
+		1AC8B58F2CB59E0200D683CD /* TeamRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B58E2CB59E0200D683CD /* TeamRoster.swift */; };
+		1AC8B5932CB5AAB700D683CD /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B5922CB5AAB700D683CD /* NewsViewModel.swift */; };
 		1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */; };
 		1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */; };
 		1ACA93612CB0A97F00F4B103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA93602CB0A97F00F4B103 /* Assets.xcassets */; };
@@ -66,6 +69,9 @@
 		1AC8B5852CB55AD800D683CD /* StadiumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumResponse.swift; sourceTree = "<group>"; };
 		1AC8B5882CB576C000D683CD /* TopPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlayer.swift; sourceTree = "<group>"; };
 		1AC8B58A2CB577EE00D683CD /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		1AC8B58C2CB59CDE00D683CD /* TeamProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileViewModel.swift; sourceTree = "<group>"; };
+		1AC8B58E2CB59E0200D683CD /* TeamRoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRoster.swift; sourceTree = "<group>"; };
+		1AC8B5922CB5AAB700D683CD /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		1ACA93542CB0A97D00F4B103 /* HOKEY WIN TRACKER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HOKEY WIN TRACKER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 				1AE987602CB429CD00255BB6 /* TableViewModel.swift */,
 				1AE987642CB49CF400255BB6 /* HomeViewModel.swift */,
 				1AC8B58A2CB577EE00D683CD /* StatisticsViewModel.swift */,
+				1AC8B58C2CB59CDE00D683CD /* TeamProfileViewModel.swift */,
+				1AC8B5922CB5AAB700D683CD /* NewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -363,6 +371,7 @@
 				1AE987742CB4AF3E00255BB6 /* LeagueInfo.swift */,
 				1AC8B5852CB55AD800D683CD /* StadiumResponse.swift */,
 				1AC8B5882CB576C000D683CD /* TopPlayer.swift */,
+				1AC8B58E2CB59E0200D683CD /* TeamRoster.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,10 +484,13 @@
 				1ACA93B62CB1A48600F4B103 /* SectionHeaderView.swift in Sources */,
 				1ACA93C32CB1EA1800F4B103 /* TeamProfileView.swift in Sources */,
 				1ACA93892CB0B0E000F4B103 /* NewsCoordinator.swift in Sources */,
+				1AC8B58D2CB59CDE00D683CD /* TeamProfileViewModel.swift in Sources */,
 				1ACA93742CB0AAF900F4B103 /* MainTabBarCoordinator.swift in Sources */,
 				1AC8B5892CB576C000D683CD /* TopPlayer.swift in Sources */,
 				1ACA937E2CB0AF2600F4B103 /* NewsViewController.swift in Sources */,
+				1AC8B5932CB5AAB700D683CD /* NewsViewModel.swift in Sources */,
 				1AE987752CB4AF3E00255BB6 /* LeagueInfo.swift in Sources */,
+				1AC8B58F2CB59E0200D683CD /* TeamRoster.swift in Sources */,
 				1ACA93C92CB1F71000F4B103 /* TeamProfileVC + Action.swift in Sources */,
 				1ACA93C52CB1F29C00F4B103 /* TeamProfileVC + CollectionView.swift in Sources */,
 				1ACA93BE2CB1B33B00F4B103 /* HomeVC + Action.swift in Sources */,
