@@ -141,5 +141,6 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         let time = DateHelper.formatTime(from: match.time)
         timeLabel.text = time
         dateLabel.text = date
+        stadiumLabel.text = "Stadium: " + (match.stadiumName ?? "") 
     }
 }

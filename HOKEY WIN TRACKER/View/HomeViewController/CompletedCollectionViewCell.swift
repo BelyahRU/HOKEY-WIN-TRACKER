@@ -66,7 +66,7 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         label.backgroundColor = .clear
         label.textColor = Resources.Colors.lightBlueColor
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.numberOfLines = 0
         return label
      }()
@@ -86,6 +86,74 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
+    private let firstPeriodResultLabel: UILabel = {
+       let label = UILabel()
+        label.text = "First period result"
+        label.textColor = UIColor(red: 100/255.0, green: 203/255.0, blue: 255/255.0, alpha: 1.0)
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.isHidden = true
+        return label
+    }()
+    
+    let firstPeriodResult: UILabel = {
+        let label = UILabel()
+         label.text = "0:0"
+        label.textColor = .white
+        label.backgroundColor = Resources.Colors.blueColor
+        label.layer.cornerRadius = 11
+        label.clipsToBounds = true
+         label.font = UIFont.systemFont(ofSize: 14)
+         label.textAlignment = .center
+         label.isHidden = true
+         return label
+     }()
+    
+    private let secondPeriodResultLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Second period result"
+        label.textColor = UIColor(red: 100/255.0, green: 203/255.0, blue: 255/255.0, alpha: 1.0)
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.isHidden = true
+        return label
+    }()
+    
+    let secondPeriodResult: UILabel = {
+        let label = UILabel()
+        label.text = "1:0"
+        label.textColor = .white
+        label.backgroundColor = Resources.Colors.blueColor
+        label.layer.cornerRadius = 11
+        label.clipsToBounds = true
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+     }()
+
+    
+    private let thirdPeriodResultLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Third period result"
+        label.textColor = UIColor(red: 100/255.0, green: 203/255.0, blue: 255/255.0, alpha: 1.0)
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.isHidden = true
+        return label
+    }()
+    
+    let thirdPeriodResult: UILabel = {
+        let label = UILabel()
+        label.text = "1:2"
+        label.textColor = .white
+        label.backgroundColor = Resources.Colors.blueColor
+        label.layer.cornerRadius = 11
+        label.clipsToBounds = true
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+     }()
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -103,6 +171,21 @@ class CompletedCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        if isExpanded {
+            self.firstPeriodResultLabel.isHidden = false
+            self.secondPeriodResultLabel.isHidden = false
+            self.thirdPeriodResultLabel.isHidden = false
+            self.firstPeriodResult.isHidden = false
+            self.secondPeriodResult.isHidden = false
+            self.thirdPeriodResult.isHidden = false
+        } else {
+            self.firstPeriodResultLabel.isHidden = true
+            self.secondPeriodResultLabel.isHidden = true
+            self.thirdPeriodResultLabel.isHidden = true
+            self.firstPeriodResult.isHidden = true
+            self.secondPeriodResult.isHidden = true
+            self.thirdPeriodResult.isHidden = true
+        }
     }
     
     private func setupUI() {
@@ -119,6 +202,13 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         addSubview(finalScoreLabel)
         addSubview(infoLabel)
         addSubview(moreDetailsButton)
+        
+        addSubview(firstPeriodResultLabel)
+        addSubview(firstPeriodResult)
+        addSubview(secondPeriodResultLabel)
+        addSubview(secondPeriodResult)
+        addSubview(thirdPeriodResultLabel)
+        addSubview(thirdPeriodResult)
     }
     
     private func setupConstraints() {
@@ -180,6 +270,43 @@ class CompletedCollectionViewCell: UICollectionViewCell {
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
         }
+        
+        thirdPeriodResultLabel.snp.makeConstraints{ make in
+            make.leading.equalTo(infoLabel.snp.leading)
+            make.bottom.equalTo(moreDetailsButton.snp.top).offset(-28)
+        }
+        
+        thirdPeriodResult.snp.makeConstraints { make in
+            make.centerY.equalTo(thirdPeriodResultLabel.snp.centerY)
+            make.trailing.equalTo(infoLabel.snp.trailing)
+            make.width.equalTo(49)
+            make.height.equalTo(21)
+        }
+        
+        secondPeriodResultLabel.snp.makeConstraints{ make in
+            make.leading.equalTo(infoLabel.snp.leading)
+            make.bottom.equalTo(thirdPeriodResultLabel.snp.top).offset(-10)
+        }
+        
+        secondPeriodResult.snp.makeConstraints { make in
+            make.centerY.equalTo(secondPeriodResultLabel.snp.centerY)
+            make.trailing.equalTo(infoLabel.snp.trailing)
+            make.width.equalTo(49)
+            make.height.equalTo(21)
+        }
+        
+        firstPeriodResultLabel.snp.makeConstraints{ make in
+            make.leading.equalTo(infoLabel.snp.leading)
+            make.bottom.equalTo(secondPeriodResultLabel.snp.top).offset(-10)
+        }
+        
+        firstPeriodResult.snp.makeConstraints { make in
+            make.centerY.equalTo(firstPeriodResultLabel.snp.centerY)
+            make.trailing.equalTo(infoLabel.snp.trailing)
+            make.width.equalTo(49)
+            make.height.equalTo(21)
+        }
+        
     }
     
     @objc private func handleMoreDetailsTapped() {
@@ -187,6 +314,30 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         moreDetailsButton.isHidden = true
         let newIcon = isExpanded ? UIImage(systemName: "chevron.up")?.withTintColor(.systemBlue) : UIImage(systemName: "chevron.down")?.withTintColor(.systemBlue)
         let titleText = isExpanded ? "COLLAPSE " : "MORE DETAILS "
+        if isExpanded {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                //left text
+                self.firstPeriodResultLabel.isHidden = false
+                self.secondPeriodResultLabel.isHidden = false
+                self.thirdPeriodResultLabel.isHidden = false
+                
+                //result
+                self.firstPeriodResult.isHidden = false
+                self.secondPeriodResult.isHidden = false
+                self.thirdPeriodResult.isHidden = false
+            }
+        } else {
+            //left text
+            self.firstPeriodResultLabel.isHidden = true
+            self.secondPeriodResultLabel.isHidden = true
+            self.thirdPeriodResultLabel.isHidden = true
+            
+            //result
+            self.firstPeriodResult.isHidden = true
+            self.secondPeriodResult.isHidden = true
+            self.thirdPeriodResult.isHidden = true
+        }
+        
         let fullString = NSMutableAttributedString(string: titleText)
         let imageAttachment = NSTextAttachment()
         imageAttachment.image = newIcon
@@ -205,5 +356,9 @@ class CompletedCollectionViewCell: UICollectionViewCell {
         firstTeamNameLabel.text = match.home.name
         secondTeamNameLabel.text = match.away.name
         dateLabel.text = DateHelper.formatUnixTime(match.time) ?? ""
+        infoLabel.text = "Stadium: " + (match.stadiumName ?? "")
+        firstPeriodResult.text = (match.scores["1"]?.home ?? "0") + "-" + (match.scores["1"]?.away ?? "0")
+        secondPeriodResult.text = (match.scores["2"]?.home ?? "0") + "-" + (match.scores["2"]?.away ?? "0")
+        thirdPeriodResult.text = (match.scores["3"]?.home ?? "0") + "-" + (match.scores["3"]?.away ?? "0")
     }
 }

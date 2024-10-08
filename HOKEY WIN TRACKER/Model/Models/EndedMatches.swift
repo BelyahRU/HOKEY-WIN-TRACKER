@@ -13,6 +13,7 @@ struct EndedMatch: Codable {
     let scores: [String: Score]
     var firstTeamImage: Data?
     var secondTeamImage: Data?
+    var stadiumName: String?
 }
 
 struct EndedMatchesResponse: Codable {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AC8B5862CB55AD800D683CD /* StadiumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8B5852CB55AD800D683CD /* StadiumResponse.swift */; };
 		1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */; };
 		1ACA935A2CB0A97D00F4B103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */; };
 		1ACA93612CB0A97F00F4B103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA93602CB0A97F00F4B103 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AC8B5852CB55AD800D683CD /* StadiumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumResponse.swift; sourceTree = "<group>"; };
 		1ACA93542CB0A97D00F4B103 /* HOKEY WIN TRACKER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HOKEY WIN TRACKER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACA93572CB0A97D00F4B103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ACA93592CB0A97D00F4B103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				1AE987702CB4AEDB00255BB6 /* Pager.swift */,
 				1AE987722CB4AEFA00255BB6 /* Standings.swift */,
 				1AE987742CB4AF3E00255BB6 /* LeagueInfo.swift */,
+				1AC8B5852CB55AD800D683CD /* StadiumResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				1AE987652CB49CF400255BB6 /* HomeViewModel.swift in Sources */,
 				1ACA93582CB0A97D00F4B103 /* AppDelegate.swift in Sources */,
 				1ACA937A2CB0AD7300F4B103 /* MainTabBarController.swift in Sources */,
+				1AC8B5862CB55AD800D683CD /* StadiumResponse.swift in Sources */,
 				1ACA93B82CB1A4A300F4B103 /* TableVC + CollectionView.swift in Sources */,
 				1AE9875F2CB4141E00255BB6 /* APICaller.swift in Sources */,
 				1AE987682CB4A1D000255BB6 /* DateHelper.swift in Sources */,

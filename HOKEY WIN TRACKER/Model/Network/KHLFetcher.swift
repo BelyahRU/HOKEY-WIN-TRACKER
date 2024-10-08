@@ -17,6 +17,7 @@ class KHLFetcher {
     //MARK: - UPCOMING
     func getUpcomingMatches(completion: @escaping (Result<[UpcomingMatch], APIError>) -> Void) {
         let urlString = "\(baseURL)/events/upcoming?sport_id=\(sport_id)&token=\(token)&league_id=\(league_id)"
+        print(urlString)
         apiCaller.performRequest(urlString: urlString, responseType: UpcomingMatchesResponse.self) { result in
             switch result {
             case .success(let matchesResponse):
@@ -28,6 +29,7 @@ class KHLFetcher {
                 for i in 0..<sortedMatches.count {
                     let image_id1 = sortedMatches[i].home.image_id
                     let image_id2 = sortedMatches[i].away.image_id
+                    let event_id = sortedMatches[i].id
                     
                     dispatchGroup.enter()
                     self.loadImage(for: image_id1) { result in
@@ -48,6 +50,18 @@ class KHLFetcher {
                             sortedMatches[i].secondTeamImage = imageData
                         case .failure(let error):
                             print("Не удалось загрузить изображение для команды \(image_id2): \(error)")
+                        }
+                        dispatchGroup.leave()
+                    }
+                    
+                    // Загрузка названия стадиона по event_id
+                    dispatchGroup.enter()
+                    self.loadStadiumName(for: event_id) { result in
+                        switch result {
+                        case .success(let stadiumName):
+                            sortedMatches[i].stadiumName = stadiumName
+                        case .failure(let error):
+                            print("Не удалось загрузить название стадиона для события \(event_id): \(error)")
                         }
                         dispatchGroup.leave()
                     }
@@ -77,6 +91,7 @@ class KHLFetcher {
                     for i in 0..<sortedMatches.count {
                         let image_id1 = sortedMatches[i].home.image_id
                         let image_id2 = sortedMatches[i].away.image_id
+                        let event_id = sortedMatches[i].id
                         
                         dispatchGroup.enter()
                         self.loadImage(for: image_id1) { result in
@@ -96,6 +111,17 @@ class KHLFetcher {
                                 sortedMatches[i].secondTeamImage = imageData
                             case .failure(let error):
                                 print("Не удалось загрузить изображение для команды \(image_id2): \(error)")
+                            }
+                            dispatchGroup.leave()
+                        }
+                        // Загрузка названия стадиона по event_id
+                        dispatchGroup.enter()
+                        self.loadStadiumName(for: event_id) { result in
+                            switch result {
+                            case .success(let stadiumName):
+                                sortedMatches[i].stadiumName = stadiumName
+                            case .failure(let error):
+                                print("Не удалось загрузить название стадиона для события \(event_id): \(error)")
                             }
                             dispatchGroup.leave()
                         }
@@ -170,6 +196,42 @@ class KHLFetcher {
             }
             
             completion(.success(data))
+        }
+        
+        task.resume()
+    }
+    
+    func loadStadiumName(for eventID: String, completion: @escaping (Result<String, APIError>) -> Void) {
+        
+        let urlString = "https://api.b365api.com/v1/event/view?token=\(NetworkConstants.token)&event_id=\(eventID)"
+        
+        guard let requestURL = URL(string: urlString) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: requestURL) { data, response, error in
+            if let error = error {
+                completion(.failure(.serverError(error.localizedDescription)))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            do {
+                let stadiumResponse = try JSONDecoder().decode(StadiumResponse.self, from: data)
+                
+                if let stadiumName = stadiumResponse.results.first?.extra?.stadium_data?.name {
+                    completion(.success(stadiumName))
+                } else {
+                    completion(.failure(.noData))
+                }
+            } catch {
+                completion(.failure(.decodingFailed(error)))
+            }
         }
         
         task.resume()

@@ -12,6 +12,7 @@ struct UpcomingMatch: Codable {
     let ss: String?
     var firstTeamImage: Data?
     var secondTeamImage: Data?
+    var stadiumName: String?
 }
 
 struct UpcomingMatchesResponse: Codable {
